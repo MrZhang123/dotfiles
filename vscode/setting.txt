@@ -1,0 +1,34 @@
+//全局设置
+// 将设置放入此文件中以覆盖默认设置
+{
+    "editor.fontSize": 20,
+    "editor.wordWrap": "on",
+    "editor.renderIndentGuides": true,
+    "terminal.integrated.fontSize": 20,
+    "terminal.integrated.cursorBlinking": true,
+    "editor.fontFamily": "Ayuthaya",
+    "window.zoomLevel": 0,
+    "editor.minimap.enabled": true,
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.iconTheme": "vscode-icons",
+    //设置emmet支持react的jsx
+    "emmet.syntaxProfiles": {
+        "javascript": "jsx"
+    },
+    //识别后缀为 .tpl 的 Smarty 模板文件关联成 PHP 语法
+    "files.associations":{
+        "*.tpl": "php"	
+    },
+    "typescript.check.npmIsInstalled": false,
+    "git.enableSmartCommit": true,
+    "editor.tabSize": 2,
+    "editor.snippetSuggestions": "top"
+}
+
+//项目设置
+//根据项目禁用git
+{
+    //disable git
+    "git.enabled": false,
+    "git.autofetch": false
+}
