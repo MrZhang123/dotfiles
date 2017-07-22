@@ -1,0 +1,81 @@
+
+" 显示行号
+set number
+" 关闭 vi 兼容模式
+set nocompatible
+" 突出显示当前行
+set cursorline
+" 打开状态栏标尺
+set ruler
+" 设定 tab 长度为 2
+set tabstop=2
+" 设定 << 和 >> 命令移动时的宽度为 2
+set shiftwidth=2
+" 使得按退格键时可以一次删掉 2 个空格
+set softtabstop=2
+" 插入括号时，短暂地跳转到匹配的对应括号
+set showmatch
+" 开始折叠
+set foldenable
+" 设定命令行的行数为 1
+set cmdheight=1
+" 显示状态栏 (默认值为 1, 无法显示状态栏)
+set laststatus=2
+" 设置语法折叠
+set foldmethod=syntax
+" 未知
+set fileformats=unix,dos,mac
+set fenc=utf-8
+set fencs=utf-8
+set tenc=utf-8
+if has("gui_running")
+  " 隐藏左侧滚动条
+  set guioptions-=L
+  " 隐藏右侧滚动条
+  set guioptions-=r
+  " 隐藏底部滚动条
+  set guioptions-=b
+  " 设置字体
+  set guifont=Source_Code_Pro_for_Powerline:h18
+endif
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/nerdtree'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'mattn/emmet-vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'joshdick/onedark.vim'
+Plugin 'Raimondi/delimitMate'
+" 设置Vundle
+call vundle#end()
+filetype plugin indent on
+" 设置nerdtree
+au stdinreadpre * let s:std_in=1
+" au vimenter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+nmap <F5> :NERDTreeToggle<CR>
+" 设置theme
+syntax on " 开启插件
+syntax enable " 开启语法高亮
+colorscheme onedark
+" airline设置
+set laststatus=2
+let g:airline_theme="powerlineish"
+let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+" YouCompleteMe
+let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_key_list_select_completion = ['<C-n>', '<c-j>']
+let g:ycm_key_list_previous_completion = ['<c-p>', '<c-k>']
+" emmet-vim
+" 设置需要使用emmet的文件
+autocmd FileType html,css,jsx,javascript.jsx EmmetInstall
+" 设置启动快捷键为tab
+let g:user_emmet_expandabbr_key = '<Tab>'
+let g:user_emmet_mode='a'
+let g:user_emmet_settings = {'javascript.jsx': {'extends': 'jsx'}}
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+" ----------设置快捷键-----------
