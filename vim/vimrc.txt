@@ -36,7 +36,7 @@ if has("gui_running")
   " 隐藏底部滚动条
   set guioptions-=b
   " 设置字体
-  set guifont=Source_Code_Pro_for_Powerline:h18
+  set guifont=Monaco_for_Powerline:h18
 endif
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
