@@ -1,2 +1,2 @@
-# editorConfig
+# Config
 👻 storage editor config file 👻
