@@ -46,6 +46,10 @@ set laststatus=2
 
 set foldmethod=syntax
 
+" 设置相对行
+
+set relativenumber
+
 " 未知
 
 set fileformats=unix,dos,mac
