@@ -71,7 +71,6 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/nerdtree'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'mattn/emmet-vim'
 Plugin 'vim-airline/vim-airline'
@@ -81,17 +80,12 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'mxw/vim-jsx'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " 设置Vundle
 
 call vundle#end()
 filetype plugin indent on
-
-" 设置nerdtree
-
-au stdinreadpre * let s:std_in=1
-" au vimenter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-nmap <F5> :NERDTreeToggle<CR>
 
 " 设置theme
 
