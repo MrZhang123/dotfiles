@@ -24,7 +24,7 @@
     "typescript.check.npmIsInstalled": false,
     "git.enableSmartCommit": true,
     "editor.tabSize": 2,
-    "editor.snippetSuggestions": "top",
+    "editor.snippetSuggestions": "top"
 }
 
 //项目设置
