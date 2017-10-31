@@ -50,6 +50,10 @@ set foldmethod=syntax
 
 set relativenumber
 
+" 括号匹配
+
+set matchpairs=(:),{:},[:]
+
 " 未知
 
 set fileformats=unix,dos,mac
@@ -77,6 +81,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'joshdick/onedark.vim'
 Plugin 'Raimondi/delimitMate'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'Chiel92/vim-autoformat'
