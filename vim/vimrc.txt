@@ -42,6 +42,10 @@ set foldenable
 
 set foldmethod=syntax
 
+"打开文件是默认不折叠代码
+
+set foldlevelstart=99
+
 " 设定命令行的行数为 1
 
 set cmdheight=1
@@ -69,14 +73,14 @@ set fenc=utf-8
 set fencs=utf-8
 set tenc=utf-8
 if has("gui_running")
-  " 隐藏左侧滚动条
-  set guioptions-=L
-  " 隐藏右侧滚动条
-  set guioptions-=r
-  " 隐藏底部滚动条
-  set guioptions-=b
-  " 设置字体
-  set guifont=Monaco_for_Powerline:h18
+	" 隐藏左侧滚动条
+	set guioptions-=L
+	" 隐藏右侧滚动条
+	set guioptions-=r
+	" 隐藏底部滚动条
+	set guioptions-=b
+	" 设置字体
+	set guifont=Monaco_for_Powerline:h18
 endif
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -161,3 +165,9 @@ au BufWrite * :Autoformat " 保存文件时对其进行格式化
 " indentLine
 let g:indentLine_enabled = 1
 let g:indentLine_char = '⎸'
+
+" 快捷键设置
+
+" 用空格键来开关代码折叠
+
+" nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
