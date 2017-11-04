@@ -34,6 +34,10 @@ set showmatch
 
 set foldenable
 
+" 设置语法折叠
+
+set foldmethod=syntax
+
 " 设定命令行的行数为 1
 
 set cmdheight=1
@@ -42,10 +46,6 @@ set cmdheight=1
 
 set laststatus=2
 
-" 设置语法折叠
-
-set foldmethod=syntax
-
 " 设置相对行
 
 set relativenumber
@@ -53,6 +53,10 @@ set relativenumber
 " 括号匹配
 
 set matchpairs=(:),{:},[:]
+
+" 设置搜索高亮，搜索完成取消键入“:noh”即可
+
+set hlsearch
 
 " 未知
 
@@ -148,8 +152,8 @@ au BufRead,BufNewFile *.scss set filetype=scss.css
 " vim-autoformat
 
 nmap <F3> :Autoformat<CR>
+au BufWrite * :Autoformat " 保存文件时对其进行格式化
 
 " indentLine
 let g:indentLine_enabled = 1
 let g:indentLine_char = '⎸'
-" ----------设置快捷键-----------
