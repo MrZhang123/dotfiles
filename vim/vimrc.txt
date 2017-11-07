@@ -99,6 +99,7 @@ Plugin 'mxw/vim-jsx'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
 Plugin 'Yggdroot/indentLine'
 
 " 设置Vundle
@@ -165,6 +166,13 @@ nmap <F3> :Autoformat<CR>
 " indentLine
 let g:indentLine_enabled = 1
 let g:indentLine_char = '⎸'
+
+" The NERDTree
+
+" Ctrl n 打开关闭NERDTree
+map <C-n> :NERDTreeToggle<CR>
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 
 " 快捷键设置
 
