@@ -1,0 +1,44 @@
+set -g prefix C-x                                   # 设置Ctrl+a作为前缀
+set -g history-limit 65535                          # 设置tumx缓冲区大小
+set -g default-terminal "screen-256color"           # 主题
+set-option -g mouse on                              # 启用鼠标
+set -g escape-time 0                                # 修改发送命令的默认延时时长
+set -g base-index 1                                 # 修改窗口默认编号从1开始
+#setw -g pane-base-index 1                          # 修改窗格默认编号从1开始
+
+unbind C-b
+bind C-x send-prefix
+bind r source-file $HOME/.tmux.conf \; display-message "Config reloaded"
+bind h select-pane -L                               # up
+bind j select-pane -D                               # down
+bind k select-pane -U                               # left
+bind l select-pane -R                               # right
+bind L resize-pane -L 10                            # 向左扩展10
+bind R resize-pane -R 10                            # 向右扩展10
+bind K resize-pane -U 5
+bind J resize-pane -D 5
+bind C-h split-window -v                            # 垂直方向新增面板，加-c '${pane_current_path}'默认进入当前目录
+bind C-v split-window -h                            # 水平方向新增面板，加 -c '${pane_current_path}'默认进入当前目录
+# 绑定y键为复制选中文本到Mac系统粘贴板
+#bind-key -T copy-mode-vi 'y' send-keys -X copy-pipe-and-cancel 'reattach-to-user-namespace pbcopy'
+setw -g mode-keys vi
+set -g @continuum-restore 'on'                      # 启用自动恢复
+
+# 标题栏
+set -g set-titles on
+set -g set-titles-string '#T'                       # 根据不同的主机显示不同的名称
+
+# 自定义状态栏
+set -g status-utf8 on                               # 状态栏支持utf8
+set -g status-interval 2                            # 状态栏刷新时间
+set -g status-justify "centre"                      # 状态栏列表局中
+
+set -g status-bg black                              # 设置状态栏背景黑色
+set -g status-fg yellow                             # 设置状态栏前景黄色
+
+# 状态栏左侧内容
+set -g status-left "#[fg=yello]#[bg=black] #S | #I.#P | #W #{prefix_highlight}"
+set -g status-left-length 60                        # 状态栏左边长度300
+# 状态栏右侧内容
+set -g status-right "#[fg=yello]#[bg=black] %Y/%m/%d %H:%M #[default]"
+set -g status-right-length 60                       # 状态栏左边长度500
