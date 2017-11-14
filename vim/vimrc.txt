@@ -82,7 +82,7 @@ if has("gui_running")
 	" 设置字体
 	set guifont=Monaco_for_Powerline:h18
 	" 设置透明背景
-	set transparency=15
+	"set transparency=15
 endif
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
