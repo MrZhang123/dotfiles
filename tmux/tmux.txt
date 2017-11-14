@@ -1,4 +1,4 @@
-set -g prefix C-x                                   # 设置Ctrl+a作为前缀
+set -g prefix C-a                                   # 设置Ctrl+a作为前缀
 set -g history-limit 65535                          # 设置tumx缓冲区大小
 set -g default-terminal "screen-256color"           # 主题
 set-option -g mouse on                              # 启用鼠标
@@ -7,7 +7,7 @@ set -g base-index 1                                 # 修改窗口默认编号�
 #setw -g pane-base-index 1                          # 修改窗格默认编号从1开始
 
 unbind C-b
-bind C-x send-prefix
+bind C-a send-prefix
 bind r source-file $HOME/.tmux.conf \; display-message "Config reloaded"
 bind h select-pane -L                               # up
 bind j select-pane -D                               # down
