@@ -80,7 +80,7 @@ if has("gui_running")
 	" 隐藏底部滚动条
 	set guioptions-=b
 	" 设置字体
-	set guifont=Monaco_for_Powerline:h18
+	set guifont=OperatorMono-Book:h18
 	" 设置透明背景
 	"set transparency=15
 endif
@@ -132,7 +132,7 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 
 set laststatus=2
 let g:airline_theme="powerlineish"
-let g:airline_powerline_fonts=1
+"let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
