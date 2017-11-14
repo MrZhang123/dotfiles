@@ -81,6 +81,8 @@ if has("gui_running")
 	set guioptions-=b
 	" 设置字体
 	set guifont=Monaco_for_Powerline:h18
+	" 设置透明背景
+	set transparency=15
 endif
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -95,12 +97,15 @@ Plugin 'joshdick/onedark.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Yggdroot/indentLine'
+Plugin 'mxw/vim-jsx'
+Plugin 'posva/vim-vue'
+
+let g:vue_disable_pre_processors=1
 
 " 设置Vundle
 
