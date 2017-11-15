@@ -182,5 +182,8 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 " 快捷键设置
 
 " 用空格键来开关代码折叠
-
 " nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
+
+" 设置切换Buffer快捷键
+ nnoremap <C-tab> :bn<CR>
+ nnoremap <C-s-tab> :bp<CR>
