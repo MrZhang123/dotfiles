@@ -17,8 +17,8 @@ bind L resize-pane -L 10                            # 向左扩展10
 bind R resize-pane -R 10                            # 向右扩展10
 bind K resize-pane -U 5
 bind J resize-pane -D 5
-bind C-h split-window -v                            # 垂直方向新增面板，加-c '${pane_current_path}'默认进入当前目录
-bind C-v split-window -h                            # 水平方向新增面板，加 -c '${pane_current_path}'默认进入当前目录
+bind C-h split-window -v                            # 水平方向新增面板，加-c '${pane_current_path}'默认进入当前目录
+bind C-v split-window -h                            # 垂直方向新增面板，加 -c '${pane_current_path}'默认进入当前目录
 # 绑定y键为复制选中文本到Mac系统粘贴板
 #bind-key -T copy-mode-vi 'y' send-keys -X copy-pipe-and-cancel 'reattach-to-user-namespace pbcopy'
 setw -g mode-keys vi
