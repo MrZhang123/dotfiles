@@ -22,6 +22,9 @@ set ruler
 
 set tabstop=2
 
+" 输入tab时自动将其转化为空格
+set expandtab
+
 " 设定 << 和 >> 命令移动时的宽度为 2
 
 set shiftwidth=2
