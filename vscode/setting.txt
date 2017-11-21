@@ -1,42 +1,54 @@
 // 将设置放入此文件中以覆盖默认设置
 {
-"editor.fontSize": 20,
-"editor.wordWrap": "on",
-"editor.renderIndentGuides": true,
-"terminal.integrated.fontSize": 20,
-"terminal.integrated.cursorBlinking": true,
-"editor.fontFamily": "Monaco for Powerline",
-"window.zoomLevel": 0,
-"editor.minimap.enabled": true,
-"workbench.colorTheme": "One Dark Pro",
-"workbench.iconTheme": "vscode-icons",
-//识别后缀为 .tpl 的 Smarty 模板文件关联成 PHP 语法
-"files.associations":{
-"*.tpl": "php"  
-},
-"emmet.includeLanguages": {
-"javascript": "javascriptreact",
-"vue-html": "html",
-"plaintext": "jade"
-},
-"emmet.triggerExpansionOnTab":true,
-//设置emmet支持react的jsx
-"typescript.check.npmIsInstalled": false,
-"git.enableSmartCommit": true,
-"editor.tabSize": 2,
-"editor.snippetSuggestions": "top",
-"workbench.statusBar.visible": true,
-"workbench.activityBar.visible": true,
-//prettier设置
-"prettier.singleQuote": true,
-"prettier.semi": false
-}
-
-
-//根据项目禁用git
-
-{
-    //disable git
-    "git.enabled": false,
-    "git.autofetch": false
+    "editor.fontSize": 20,
+    "editor.wordWrap": "on",
+    "editor.renderIndentGuides": true,
+    "terminal.integrated.fontSize": 20,
+    "terminal.integrated.cursorBlinking": true,
+    "editor.fontFamily": "OperatorMono-Book",
+    "window.zoomLevel": 0,
+    "editor.minimap.enabled": true,
+    "workbench.colorTheme": "Material Theme",
+    "workbench.iconTheme": "vscode-icons",
+    //识别后缀为 .tpl 的 Smarty 模板文件关联成 PHP 语法
+    "files.associations":{
+    "*.tpl": "php"  
+    },
+    "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "vue-html": "html",
+    "plaintext": "jade"
+    },
+    "emmet.triggerExpansionOnTab":true,
+    //设置emmet支持react的jsx
+    "typescript.check.npmIsInstalled": false,
+    "git.enableSmartCommit": true,
+    "editor.tabSize": 2,
+    "editor.snippetSuggestions": "top",
+    "workbench.statusBar.visible": true,
+    "workbench.activityBar.visible": true,
+    //prettier设置
+    "prettier.semi": false, //每行代码去掉分号
+    "prettier.singleQuote": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "materialTheme.cache.workbench.settings": {
+        "themeColours": "Palenight",
+        "accent": "Bright Teal",
+        "accentPrevious": "Breaking Bad"
+    },
+    //关闭vscode代码检查
+    "javascript.validate.enable": false,
+    
+    "workbench.colorCustomizations": {
+        "activityBarBadge.background": "#64FFDA",
+        "list.activeSelectionForeground": "#64FFDA",
+        "list.inactiveSelectionForeground": "#64FFDA",
+        "list.highlightForeground": "#64FFDA",
+        "scrollbarSlider.activeBackground": "#64FFDA50",
+        "editorSuggestWidget.highlightForeground": "#64FFDA",
+        "textLink.foreground": "#64FFDA",
+        "progressBar.background": "#64FFDA",
+        "pickerGroup.foreground": "#64FFDA",
+        "tab.activeBorder": "#64FFDA"
+    }
 }
