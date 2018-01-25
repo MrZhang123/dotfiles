@@ -181,6 +181,8 @@ let g:indentLine_char = '⎸'
 map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
+" 显示点开头的文件
+let NERDTreeShowHidden=1
 
 " 快捷键设置
 
