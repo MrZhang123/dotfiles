@@ -1,2 +1,2 @@
 # Config
-👻 storage editor config file 👻
+👻 storage some config file 👻
