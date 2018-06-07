@@ -69,6 +69,10 @@ set matchpairs=(:),{:},[:]
 
 set hlsearch
 
+" 背景透明度
+
+set transparency=15
+
 " 未知
 
 set fileformats=unix,dos,mac
