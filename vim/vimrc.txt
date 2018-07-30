@@ -89,7 +89,7 @@ if has("gui_running")
 	" 设置字体
 	set guifont=OperatorMono-Book:h20
 	" 设置透明背景
-	"set transparency=15
+	set transparency=15
 endif
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -123,7 +123,7 @@ filetype plugin indent on
 
 syntax on " 开启插件
 syntax enable " 开启语法高亮
-colorscheme onedark
+colorscheme solarized
 
 " 设置CtrlP
 
