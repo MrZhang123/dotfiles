@@ -1,18 +1,19 @@
 // 将设置放入此文件中以覆盖默认设置
 {
-    "editor.fontSize": 20,
+    "editor.fontSize": 16,
     "editor.wordWrap": "on",
-    "editor.renderIndentGuides": true,
-    "terminal.integrated.fontSize": 20,
+    // "editor.renderIndentGuides": true,
+    "terminal.integrated.fontSize": 16,
     "terminal.integrated.cursorBlinking": true,
     "editor.fontFamily": "OperatorMono-Book",
+    // "editor.fontFamily": "Monaco",
     "window.zoomLevel": 0,
-    "editor.minimap.enabled": true,
-    "workbench.colorTheme": "Material Theme",
+    // "editor.minimap.enabled": true,
+    "workbench.colorTheme": "Material Theme Palenight",
     "workbench.iconTheme": "vscode-icons",
     //识别后缀为 .tpl 的 Smarty 模板文件关联成 PHP 语法
     "files.associations":{
-    "*.tpl": "php"  
+    "*.tpl": "php"
     },
     "emmet.includeLanguages": {
     "javascript": "javascriptreact",
@@ -30,15 +31,15 @@
     //prettier设置
     "prettier.semi": false, //每行代码去掉分号
     "prettier.singleQuote": true,
+    "prettier.printWidth": 100, // 设置一行代码最大数
     "workbench.startupEditor": "newUntitledFile",
     "materialTheme.cache.workbench.settings": {
         "themeColours": "Palenight",
-        "accent": "Bright Teal",
-        "accentPrevious": "Breaking Bad"
+        "accentPrevious": "Bright Teal"
     },
     //关闭vscode代码检查
-    "javascript.validate.enable": false,
-    
+    // "javascript.validate.enable": false,
+
     "workbench.colorCustomizations": {
         "activityBarBadge.background": "#64FFDA",
         "list.activeSelectionForeground": "#64FFDA",
@@ -49,6 +50,14 @@
         "textLink.foreground": "#64FFDA",
         "progressBar.background": "#64FFDA",
         "pickerGroup.foreground": "#64FFDA",
-        "tab.activeBorder": "#64FFDA"
+        "tab.activeBorder": "#64FFDA",
+        "notificationLink.foreground": "#64FFDA"
     }
+}
+//根据项目禁用git
+
+{
+    //disable git
+    "git.enabled": false,
+    "git.autofetch": false
 }

@@ -69,10 +69,6 @@ set matchpairs=(:),{:},[:]
 
 set hlsearch
 
-" 背景透明度（只有macvim支持）
-
-set transparency=15
-
 " 未知
 
 set fileformats=unix,dos,mac
@@ -89,7 +85,7 @@ if has("gui_running")
 	" 设置字体
 	set guifont=OperatorMono-Book:h20
 	" 设置透明背景
-	set transparency=15
+	" set transparency=15
 endif
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
