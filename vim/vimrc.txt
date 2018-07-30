@@ -123,6 +123,7 @@ filetype plugin indent on
 
 syntax on " 开启插件
 syntax enable " 开启语法高亮
+set background=dark
 colorscheme solarized
 
 " 设置CtrlP
