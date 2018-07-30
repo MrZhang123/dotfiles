@@ -69,7 +69,7 @@ set matchpairs=(:),{:},[:]
 
 set hlsearch
 
-" 背景透明度
+" 背景透明度（只有macvim支持）
 
 set transparency=15
 
