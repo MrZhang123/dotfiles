@@ -8,7 +8,7 @@ set nocompatible
 
 " 突出显示当前行
 
-set cursorline
+"set cursorline
 
 " 突出显示当前列
 
@@ -83,7 +83,7 @@ if has("gui_running")
 	" 隐藏底部滚动条
 	set guioptions-=b
 	" 设置字体
-	set guifont=OperatorMono-Book:h20
+	set guifont=OperatorMono-Book:h16
 	" 设置透明背景
 	" set transparency=15
 endif
