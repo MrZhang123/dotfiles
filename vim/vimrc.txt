@@ -83,7 +83,9 @@ if has("gui_running")
 	" 隐藏底部滚动条
 	set guioptions-=b
 	" 设置字体
-	set guifont=OperatorMono-Book:h16
+	" set guifont=OperatorMono-Book:h16
+  set macligatures
+  set guifont=Fira\ Code:h16
 	" 设置透明背景
 	" set transparency=15
 endif
