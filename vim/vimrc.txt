@@ -1,3 +1,7 @@
+" 设置iterm2内vim滚动
+
+set mouse=a
+
 " 显示行号
 
 set number
@@ -18,7 +22,7 @@ set cursorline
 
 set ruler
 
-" 设定 tab 长度为 2
+" 设定 tab 长度
 
 set tabstop=2
 
