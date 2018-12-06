@@ -24,18 +24,19 @@ set ruler
 
 " 设定 tab 长度
 
-set tabstop=2
+set tabstop=4 " 2
 
 " 输入tab时自动将其转化为空格
+
 set expandtab
 
 " 设定 << 和 >> 命令移动时的宽度为 2
 
-set shiftwidth=2
+set shiftwidth=4 " 2
 
 " 使得按退格键时可以一次删掉 2 个空格
 
-set softtabstop=2
+set softtabstop=4 " 2
 
 " 插入括号时，短暂地跳转到匹配的对应括号
 
@@ -73,6 +74,14 @@ set matchpairs=(:),{:},[:]
 
 set hlsearch
 
+" 设置默认进行大小写不敏感查找
+
+set ignorecase
+
+" 如果有一个大写字母，则切换到大小写敏感查找
+
+set smartcase 
+
 " 未知
 
 set fileformats=unix,dos,mac
@@ -89,7 +98,7 @@ if has("gui_running")
 	" 设置字体
 	" set guifont=OperatorMono-Book:h16
   set macligatures
-  set guifont=Fira\ Code:h16
+  set guifont=Fira\ Code:h18
 	" 设置透明背景
 	" set transparency=15
 endif
@@ -185,18 +194,23 @@ let g:indentLine_char = '⎸'
 " The NERDTree
 
 " Ctrl n 打开关闭NERDTree
+
 map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
+
 " 显示点开头的文件
+
 let NERDTreeShowHidden=1
 
 " 快捷键设置
 
 " 用空格键来开关代码折叠
+
 " nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 
 " 设置切换Buffer快捷键，ctrlp使用ctrl+f可以切换到buffer也可以切换
+
 nnoremap <C-tab> :bn<CR>
 nnoremap <C-s-tab> :bp<CR>
 
@@ -207,3 +221,16 @@ inoremap <D-j> <Esc>:m .+1<CR>==gi
 inoremap <D-k> <Esc>:m .-2<CR>==gi
 vnoremap <D-j> :m '>+1<CR>gv=gv
 vnoremap <D-k> :m '<-2<CR>gv=gv
+
+" 设置存储文件为commond+s
+
+nmap <C-w> :update<CR>
+vmap <C-w> <C-C>:update<CR>
+imap <C-w> <C-O>:update<CR>
+
+" 在Normal和Visual/Select Mode下，设置Tab键和shift-tab键缩进文本
+
+nmap <tab> V>
+nmap <s-tab> V<
+vmap <tab> >gv
+vmap <s-tab> <gv
