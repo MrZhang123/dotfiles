@@ -15,7 +15,7 @@ set cursorline
 
 " 突出显示当前列
 
-"set cursorcolumn
+set cursorcolumn
 
 " 打开状态栏标尺
 
