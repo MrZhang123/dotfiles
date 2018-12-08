@@ -1,4 +1,5 @@
 " 设置iterm2内vim滚动
+
 set mouse=a
 
 " 显示行号
@@ -95,9 +96,9 @@ if has("gui_running")
 	" 隐藏底部滚动条
 	set guioptions-=b
 	" 设置字体
-	set guifont=OperatorMono-Book:h18
-  " set guifont=Fira\ Code:h18
+	set guifont=OperatorMono-Book:h16
   set macligatures
+  " set guifont=Fira\ Code:h18
 	" 设置透明背景
 	" set transparency=15
 endif
@@ -159,10 +160,6 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_key_list_select_completion = ['<c-n>', '<c-j>']
 let g:ycm_key_list_previous_completion = ['<c-p>', '<c-k>']
-nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
-nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
-nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nmap <F4> :YcmDiags<CR>
 
 " emmet-vim
 " 设置需要使用emmet的文件
@@ -224,8 +221,6 @@ inoremap <D-j> <Esc>:m .+1<CR>==gi
 inoremap <D-k> <Esc>:m .-2<CR>==gi
 vnoremap <D-j> :m '>+1<CR>gv=gv
 vnoremap <D-k> :m '<-2<CR>gv=gv
-
-" 设置存储文件为commond+s
 
 " 在Normal和Visual/Select Mode下，设置Tab键和shift-tab键缩进文本
 
