@@ -159,6 +159,10 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_key_list_select_completion = ['<c-n>', '<c-j>']
 let g:ycm_key_list_previous_completion = ['<c-p>', '<c-k>']
+nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nmap <F4> :YcmDiags<CR>
 
 " emmet-vim
 " 设置需要使用emmet的文件
@@ -222,10 +226,6 @@ vnoremap <D-j> :m '>+1<CR>gv=gv
 vnoremap <D-k> :m '<-2<CR>gv=gv
 
 " 设置存储文件为commond+s
-
-nmap <C-w> :update<CR>
-vmap <C-w> <C-C>:update<CR>
-imap <C-w> <C-O>:update<CR>
 
 " 在Normal和Visual/Select Mode下，设置Tab键和shift-tab键缩进文本
 
