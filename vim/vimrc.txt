@@ -115,13 +115,15 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'Raimondi/delimitMate'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'pangloss/vim-javascript'
-Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'Chiel92/vim-autoformat'
+" Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'andymass/vim-matchup'
+Plugin 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Yggdroot/indentLine'
 Plugin 'mxw/vim-jsx'
-Plugin 'posva/vim-vue'
 
 let g:vue_disable_pre_processors=1
 
@@ -179,13 +181,8 @@ let g:jsx_ext_required = 0
 
 " scss-syntax
 
-au FileType scss set iskeyword+=-
-au BufRead,BufNewFile *.scss set filetype=scss.css
-
-" vim-autoformat
-
-nmap <F3> :Autoformat<CR>
-" au BufWrite * :Autoformat " 保存文件时对其进行格式化
+" au FileType scss set iskeyword+=-
+" au BufRead,BufNewFile *.scss set filetype=scss.css
 
 " indentLine
 let g:indentLine_enabled = 1
