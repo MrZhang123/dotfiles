@@ -132,6 +132,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Yggdroot/indentLine'
 Plugin 'mxw/vim-jsx'
+Plugin 'leafgarland/typescript-vim'
 
 let g:vue_disable_pre_processors=1
 
