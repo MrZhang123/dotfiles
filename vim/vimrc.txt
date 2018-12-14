@@ -7,6 +7,10 @@ let mapleader=";"
 
 set mouse=a
 
+" 自动将当前目录设置为包含当前文件的目录，然后按下ctrl-x-f触发提示
+
+set autochdir
+
 " 显示行号
 
 set number
