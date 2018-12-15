@@ -1,4 +1,10 @@
+
 " ---------------vim set-------------------
+" set vim to en
+
+let $LANG = 'en_US'
+set langmenu=en_US
+
 " set vim leader is ; default is \
 
 let mapleader=";"
