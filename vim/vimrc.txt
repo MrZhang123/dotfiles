@@ -258,6 +258,13 @@ nmap <s-tab> V<
 vmap <tab> >gv
 vmap <s-tab> <gv
 
+" 修改进入Normal模式的快捷键为Ctrl-c
+
+"nmap <Esc> <C-c>
+"vmap <Esc> <C-c>
+"imap <Esc> <C-c>
+"cmap <Esc> <C-c>
+
 " ---------vim-prettier------------
 
 " max line length that prettier will wrap on
