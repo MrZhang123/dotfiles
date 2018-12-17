@@ -1,4 +1,4 @@
-
+" 在vim中，按<Esc>和按<Ctrl-c>一样，都可以到Normal模式
 " ---------------vim set-------------------
 " set vim to en
 
@@ -112,10 +112,10 @@ if has("gui_running")
 	set guioptions-=b
 	" 设置字体
 	set guifont=OperatorMono-Book:h18
-  set macligatures
+    set macligatures
   " set guifont=Fira\ Code:h18
 	" 设置透明背景
-	" set transparency=15
+	set transparency=20
 endif
 
 " ----------------plugin----------------------
@@ -258,12 +258,9 @@ nmap <s-tab> V<
 vmap <tab> >gv
 vmap <s-tab> <gv
 
-" 修改进入Normal模式的快捷键为Ctrl-c
+" 设置保存快捷键
 
-"nmap <Esc> <C-c>
-"vmap <Esc> <C-c>
-"imap <Esc> <C-c>
-"cmap <Esc> <C-c>
+nmap <leader>w :w<CR>
 
 " ---------vim-prettier------------
 
