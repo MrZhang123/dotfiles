@@ -1,5 +1,5 @@
-" 在vim中，按<Esc>和按<Ctrl-c>一样，都可以到Normal模式
 " ---------------vim set-------------------
+" 在vim中，按<Esc>和按<Ctrl-c>一样，都可以到Normal模式
 " set vim to en
 
 let $LANG = 'en_US'
