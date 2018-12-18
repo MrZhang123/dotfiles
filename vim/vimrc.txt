@@ -115,7 +115,7 @@ if has("gui_running")
     set macligatures
   " set guifont=Fira\ Code:h18
 	" 设置透明背景
-	set transparency=20
+	" set transparency=20
 endif
 
 " ----------------plugin----------------------
