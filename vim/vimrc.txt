@@ -111,8 +111,9 @@ if has("gui_running")
 	" 隐藏底部滚动条
 	set guioptions-=b
 	" 设置字体
-	set guifont=OperatorMono-Book:h18
-    set macligatures
+	set macligatures
+	set guifont=Dank\ Mono:h18
+  " set guifont=OperatorMono-Book:h18
   " set guifont=Fira\ Code:h18
 	" 设置透明背景
 	" set transparency=20
@@ -261,6 +262,11 @@ vmap <s-tab> <gv
 " 设置保存快捷键
 
 nmap <leader>w :w<CR>
+
+" 设置关闭当前buffer
+" :bp|bd # 关闭并跳转到前一个窗口（保证分屏不会关闭）
+nmap <leader>d :bd<CR> " 关闭当前buffer
+
 
 " ---------vim-prettier------------
 
