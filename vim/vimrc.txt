@@ -116,7 +116,7 @@ if has("gui_running")
   " set guifont=OperatorMono-Book:h18
   " set guifont=Fira\ Code:h18
 	" 设置透明背景
-	" set transparency=20
+	" set transparency=1
 endif
 
 " ----------------plugin----------------------
@@ -267,6 +267,13 @@ nmap <leader>w :w<CR>
 " :bp|bd # 关闭并跳转到前一个窗口（保证分屏不会关闭）
 nmap <leader>d :bd<CR> " 关闭当前buffer
 
+" 设置在两个大括号之间回车，直接光标处于两大括号垂直方向中间
+
+inoremap <expr> <cr>
+   \   getline(".") =~ '\S\s*{$'                 ? "<bs><cr>{<cr>}<esc>O"
+   \ : getline('.') =~ '^\s*{$'                  ? "<cr>}<esc>O"
+   \ : getline(".")[col(".")-2:col(".")-1]=="{}" ? "<cr><esc>O"
+   \ :                                             "<cr>"
 
 " ---------vim-prettier------------
 
