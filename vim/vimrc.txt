@@ -244,13 +244,13 @@ let g:NERDCustomDelimiters={
 nnoremap <C-tab> :bn<CR>
 nnoremap <C-s-tab> :bp<CR>
 
-" 设置移动当前行向上向下快捷键
-nnoremap <D-j> :m .+1<CR>==
-nnoremap <D-k> :m .-2<CR>==
-inoremap <D-j> <Esc>:m .+1<CR>==gi
-inoremap <D-k> <Esc>:m .-2<CR>==gi
-vnoremap <D-j> :m '>+1<CR>gv=gv
-vnoremap <D-k> :m '<-2<CR>gv=gv
+" 设置移动当前行向上向下快捷键（终端下设置commond键或者Alt键有冲突，所以更改为shift键）
+nnoremap <S-j> :m .+1<CR>==
+nnoremap <S-k> :m .-2<CR>==
+inoremap <S-j> <Esc>:m .+1<CR>==gi
+inoremap <S-k> <Esc>:m .-2<CR>==gi
+vnoremap <S-j> :m '>+1<CR>gv=gv
+vnoremap <S-k> :m '<-2<CR>gv=gv
 
 " 在Normal和Visual/Select Mode下，设置Tab键和shift-tab键缩进文本
 
