@@ -32,17 +32,22 @@ set -g set-titles-string '#T'                       # 根据不同的主机显�
 # 自定义状态栏
 set -g status-utf8 on                               # 状态栏支持utf8
 set -g status-interval 2                            # 状态栏刷新时间
-set -g status-justify "center"                      # 状态栏列表局中
+set -g status-justify "centre"                      # 状态栏列表局中
 
-set -g status-bg black                              # 设置状态栏背景黑色
-set -g status-fg red                                # 设置状态栏前景黄色
+set -g status-bg black                              # 设置状态栏背景
+set -g status-fg yellow                                # 设置状态栏前景
 
-# 状态栏左侧内容
-set -g status-left "#[fg=yello]#[bg=black] #S | #I.#P | #W #{prefix_highlight}"
+# 状态栏左侧内容 #S #I #P #W
+set -g status-left "🤣#[fg=red]#[bg=black] #S | #I.#P | #W"
 set -g status-left-length 60                        # 状态栏左边长度300
 # 状态栏右侧内容
-set -g status-right "#[fg=yello]#[bg=black] %Y/%m/%d %H:%M #[default]"
+set -g status-right "🕓#[fg=blue]#[bg=black] %Y/%m/%d 周%a %H:%M #[default]"
 set -g status-right-length 60                       # 状态栏右边长度500
+
+# 设置window样式
+
+set-window-option -g window-status-style "fg=yellow,bg=black"
+set-window-option -g window-status-current-style "fg=black,bg=#a4d900"
 
 # 插件列表
 
