@@ -39,7 +39,7 @@ set ruler
 
 " 设定 tab 长度
 
-set tabstop=4 " 2
+set tabstop=2
 
 " 输入tab时自动将其转化为空格
 
@@ -47,11 +47,11 @@ set expandtab
 
 " 设定 << 和 >> 命令移动时的宽度为 2
 
-set shiftwidth=4 " 2
+set shiftwidth=2
 
 " 使得按退格键时可以一次删掉 2 个空格
 
-set softtabstop=4 " 2
+set softtabstop=2
 
 " 插入括号时，短暂地跳转到匹配的对应括号
 
