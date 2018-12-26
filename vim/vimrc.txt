@@ -283,8 +283,8 @@ inoremap <expr> <cr>
 
 " number of spaces per indentation level
 " Prettier default: 2
-let g:prettier#config#tab_width = 4
-let g:prettier#config#tab_size = 4
+let g:prettier#config#tab_width = 2
+let g:prettier#config#tab_size = 2
 
 " use tabs over spaces
 " Prettier default: false
