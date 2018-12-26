@@ -41,7 +41,7 @@ set -g status-fg yellow                                # 设置状态栏前景
 set -g status-left "🤣#[fg=red]#[bg=black] #S | #I.#P | #W"
 set -g status-left-length 60                        # 状态栏左边长度300
 # 状态栏右侧内容
-set -g status-right "🕓#[fg=blue]#[bg=black] %Y/%m/%d 周%a %H:%M #[default]"
+set -g status-right "#{battery_icon} #{battery_percentage} 🕓#[fg=blue]#[bg=black] %Y/%m/%d 周%a %H:%M #[default]"
 set -g status-right-length 60                       # 状态栏右边长度500
 
 # 设置window样式
@@ -54,5 +54,10 @@ set-window-option -g window-status-current-style "fg=black,bg=#a4d900"
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'tmux-plugins/tmux-battery'
+
+# 插件设置
+
+set -g @batt_charged_icon "😎"
 
 run '$HOME/.tmux/plugins/tpm/tpm'
