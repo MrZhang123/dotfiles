@@ -39,7 +39,7 @@ set ruler
 
 " 设定 tab 长度
 
-set tabstop=2
+set tabstop=4
 
 " 输入tab时自动将其转化为空格
 
@@ -47,11 +47,11 @@ set expandtab
 
 " 设定 << 和 >> 命令移动时的宽度为 2
 
-set shiftwidth=2
+set shiftwidth=4
 
 " 使得按退格键时可以一次删掉 2 个空格
 
-set softtabstop=2
+set softtabstop=4
 
 " 插入括号时，短暂地跳转到匹配的对应括号
 
@@ -283,8 +283,8 @@ inoremap <expr> <cr>
 
 " number of spaces per indentation level
 " Prettier default: 2
-let g:prettier#config#tab_width = 2
-let g:prettier#config#tab_size = 2
+let g:prettier#config#tab_width = 4
+let g:prettier#config#tab_size = 4
 
 " use tabs over spaces
 " Prettier default: false
