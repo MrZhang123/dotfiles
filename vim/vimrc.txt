@@ -237,7 +237,9 @@ let g:NERDCustomDelimiters={
 
 " vim-markdown
 " use math extensions
+let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_math = 1
+let g:vim_markdown_conceal = 0
 
 " ---------------vim快捷键设置-------------
 
@@ -322,7 +324,7 @@ let g:prettier#config#trailing_comma = 'all'
 
 " flow|babylon|typescript|css|less|scss|json|graphql|markdown
 " Prettier default: babylon
-" let g:prettier#config#parser = 'flow'
+" let g:prettier#config#parser = 'markdown'
 
 " cli-override|file-override|prefer-file
 let g:prettier#config#config_precedence = 'prefer-file'
