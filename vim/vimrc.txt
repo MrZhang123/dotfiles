@@ -5,6 +5,10 @@
 let $LANG = 'en_US'
 set langmenu=en_US
 
+" Mac下设置vim共享系统剪切板（所有删除和拷贝工作都默认到匿名寄存器）
+
+set clipboard=unnamed
+
 " set vim leader is ; default is \
 
 let mapleader=";"
@@ -274,6 +278,11 @@ nmap <leader>w :w<CR>
 " 设置关闭当前buffer
 " :bp|bd # 关闭并跳转到前一个窗口（保证分屏不会关闭）
 nmap <leader>d :bd<CR> " 关闭当前buffer
+
+" 设置复制粘贴到系统剪切板
+
+" vmap <leader>v "+gp
+" vmap <leader>c "+y
 
 " 设置在两个大括号之间回车，直接光标处于两大括号垂直方向中间
 
