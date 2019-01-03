@@ -268,12 +268,11 @@ vmap <s-tab> <gv
 nmap <leader>w :w<CR>
 
 " 设置操作buffer
-nmap <leader>d :bd<CR> " close buffer
-nmap <leader>p :bp<CR> " pre buffer
-nmap <leader>n :bn<CR> " next buffer
+nmap <leader>bd :bd<CR> " close buffer
+nmap <leader>bp :bp<CR> " pre buffer
+nmap <leader>bn :bn<CR> " next buffer
 
 " 设置复制粘贴到系统剪切板
-
 " vmap <leader>v "+gp
 " vmap <leader>c "+y
 
@@ -283,6 +282,12 @@ inoremap <expr> <cr>
    \ : getline('.') =~ '^\s*{$'                  ? "<cr>}<esc>O"
    \ : getline(".")[col(".")-2:col(".")-1]=="{}" ? "<cr><esc>O"
    \ :                                             "<cr>"
+
+" YCM跳转到定义（只写了js的配置）
+nnoremap <leader>dc :YcmCompleter GoToDeclaration<CR> " 跳转到申明
+nnoremap <leader>df :YcmCompleter GoToDefinition<CR>  " 跳转到定义
+nnoremap <leader>g :YcmCompleter GoTo<CR>             " 这个命令试图执行它所能执行的“最合理的”转到操作
+nnoremap <leader>tp :YcmCompleter GoToType<CR>        " 跳转到type
 
 " ---------vim-prettier------------
 
