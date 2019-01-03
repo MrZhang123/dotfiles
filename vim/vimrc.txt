@@ -248,13 +248,7 @@ let g:vim_markdown_conceal = 0
 " ---------------vim快捷键设置-------------
 
 " 用空格键来开关代码折叠
-
 " nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
-
-" 设置切换Buffer快捷键，ctrlp使用ctrl+f可以切换到buffer也可以切换
-
-nnoremap <C-tab> :bn<CR>
-nnoremap <C-s-tab> :bp<CR>
 
 " 设置移动当前行向上向下快捷键（终端下设置commond键或者Alt键有冲突，所以更改为shift键）
 nnoremap <S-j> :m .+1<CR>==
@@ -265,19 +259,18 @@ vnoremap <S-j> :m '>+1<CR>gv=gv
 vnoremap <S-k> :m '<-2<CR>gv=gv
 
 " 在Normal和Visual/Select Mode下，设置Tab键和shift-tab键缩进文本
-
 nmap <tab> V>
 nmap <s-tab> V<
 vmap <tab> >gv
 vmap <s-tab> <gv
 
 " 设置保存快捷键
-
 nmap <leader>w :w<CR>
 
-" 设置关闭当前buffer
-" :bp|bd # 关闭并跳转到前一个窗口（保证分屏不会关闭）
-nmap <leader>d :bd<CR> " 关闭当前buffer
+" 设置操作buffer
+nmap <leader>d :bd<CR> " close buffer
+nmap <leader>p :bp<CR> " pre buffer
+nmap <leader>n :bn<CR> " next buffer
 
 " 设置复制粘贴到系统剪切板
 
@@ -285,7 +278,6 @@ nmap <leader>d :bd<CR> " 关闭当前buffer
 " vmap <leader>c "+y
 
 " 设置在两个大括号之间回车，直接光标处于两大括号垂直方向中间
-
 inoremap <expr> <cr>
    \   getline(".") =~ '\S\s*{$'                 ? "<bs><cr>{<cr>}<esc>O"
    \ : getline('.') =~ '^\s*{$'                  ? "<cr>}<esc>O"
