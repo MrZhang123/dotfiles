@@ -89,3 +89,5 @@ export NVM_DIR="$HOME/.nvm"
 export ANDROID_HOME=~/Library/Android/sdk
 #ANDROID SDK Tools
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+alias git='LANG=en_GB git'
+alias mav="mvim -v"
