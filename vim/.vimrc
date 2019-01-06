@@ -268,13 +268,17 @@ vmap <s-tab> <gv
 nmap <leader>w :w<CR>
 
 " 设置操作buffer
-nmap <leader>bd :bd<CR> " close buffer
-nmap <leader>bp :bp<CR> " pre buffer
-nmap <leader>bn :bn<CR> " next buffer
+nmap <leader>d :bd<CR> " close buffer
+" nnoremap <leader>pr :bp<CR> " pre buffer
+" nnoremap <leader>ne :bn<CR> " next buffer
 
-" 设置复制粘贴到系统剪切板
-" vmap <leader>v "+gp
-" vmap <leader>c "+y
+" 修改进入normal模式的快捷键
+" inoremap jj <Esc>
+" vnoremap jj <Esc>
+
+" 修改完配置重新加载.vimrc文件
+
+nnoremap <leader>r :source ~/.vimrc<CR>
 
 " 设置在两个大括号之间回车，直接光标处于两大括号垂直方向中间
 inoremap <expr> <cr>
