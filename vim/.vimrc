@@ -253,10 +253,11 @@ let g:vim_markdown_conceal = 0
 " 设置移动当前行向上向下快捷键（终端下设置commond键或者Alt键有冲突，所以更改为shift键）
 nnoremap <S-j> :m .+1<CR>==
 nnoremap <S-k> :m .-2<CR>==
-inoremap <S-j> <Esc>:m .+1<CR>==gi
-inoremap <S-k> <Esc>:m .-2<CR>==gi
 vnoremap <S-j> :m '>+1<CR>gv=gv
 vnoremap <S-k> :m '<-2<CR>gv=gv
+" 输入模式下由于与输入大写字母冲突，所以注释
+" inoremap <S-j> <Esc>:m .+1<CR>==gi
+" inoremap <S-k> <Esc>:m .-2<CR>==gi
 
 " 在Normal和Visual/Select Mode下，设置Tab键和shift-tab键缩进文本
 nmap <tab> V>
