@@ -148,6 +148,7 @@ Plugin 'mxw/vim-jsx'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'styled-components/vim-styled-components'
 
 let g:vue_disable_pre_processors=1
 
