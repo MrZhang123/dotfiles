@@ -245,6 +245,10 @@ let g:vim_markdown_math = 1
 let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_conceal = 0
 
+" vim-json
+" 禁用vim-json隐藏双引号
+set conceallevel=0
+
 " ---------------vim快捷键设置-------------
 
 " 用空格键来开关代码折叠
