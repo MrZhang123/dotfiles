@@ -251,9 +251,11 @@ let g:vim_markdown_conceal = 0
 set conceallevel=0
 
 " ale for lint
+let g:ale_linters = ['eslint']
 let g:ale_fixers = ['prettier', 'eslint']
 let g:ale_sign_error = '👎'
 let g:ale_sign_warning = '🎃'
+" let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
 " let g:ale_sign_error = '✘'
 " let g:ale_sign_warning = '⚠'
 " let g:ale_open_list = 1
