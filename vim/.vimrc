@@ -139,7 +139,8 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'pangloss/vim-javascript'
 " Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'prettier/vim-prettier'
+" Plugin 'prettier/vim-prettier'
+Plugin 'w0rp/ale'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
@@ -248,6 +249,16 @@ let g:vim_markdown_conceal = 0
 " vim-json
 " 禁用vim-json隐藏双引号
 set conceallevel=0
+
+" ale for lint
+let g:ale_fixers = ['prettier', 'eslint']
+let g:ale_sign_error = '👎'
+let g:ale_sign_warning = '🎃'
+" let g:ale_sign_error = '✘'
+" let g:ale_sign_warning = '⚠'
+" let g:ale_open_list = 1
+" let g:ale_keep_list_window_open = 1
+" let g:ale_fix_on_save = 1
 
 " ---------------vim快捷键设置-------------
 
