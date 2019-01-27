@@ -141,6 +141,7 @@ Plugin 'pangloss/vim-javascript'
 " Plugin 'cakebaker/scss-syntax.vim'
 " Plugin 'prettier/vim-prettier'
 Plugin 'w0rp/ale'
+Plugin 'Chiel92/vim-autoformat'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
@@ -250,11 +251,11 @@ let g:vim_markdown_conceal = 0
 " 禁用vim-json隐藏双引号
 set conceallevel=0
 
-" ale for lint
-let g:ale_linters = ['eslint']
-let g:ale_fixers = ['prettier', 'eslint']
-let g:ale_sign_error = '👎'
+" ale for lintre
+" let g:ale_fixers = ['prettier-eslint']
+let g:ale_sign_error = '👊'
 let g:ale_sign_warning = '🎃'
+" let g:ale_javascript_prettier_use_local_config = 1
 " let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
 " let g:ale_sign_error = '✘'
 " let g:ale_sign_warning = '⚠'
