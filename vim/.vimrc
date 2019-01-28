@@ -140,8 +140,8 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'pangloss/vim-javascript'
 " Plugin 'cakebaker/scss-syntax.vim'
 " Plugin 'prettier/vim-prettier'
+" Plugin 'Chiel92/vim-autoformat'
 Plugin 'w0rp/ale'
-Plugin 'Chiel92/vim-autoformat'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
@@ -151,8 +151,6 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'styled-components/vim-styled-components'
-
-let g:vue_disable_pre_processors=1
 
 " 设置Vundle
 
@@ -251,16 +249,12 @@ let g:vim_markdown_conceal = 0
 " 禁用vim-json隐藏双引号
 set conceallevel=0
 
-" ale for lintre
-" let g:ale_fixers = ['prettier-eslint']
+" ale for linter
+let g:ale_fixers = ['eslint', 'prettier']
 let g:ale_sign_error = '👊'
 let g:ale_sign_warning = '🎃'
-" let g:ale_javascript_prettier_use_local_config = 1
-" let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
-" let g:ale_sign_error = '✘'
-" let g:ale_sign_warning = '⚠'
+let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
 " let g:ale_open_list = 1
-" let g:ale_keep_list_window_open = 1
 " let g:ale_fix_on_save = 1
 
 " ---------------vim快捷键设置-------------
