@@ -151,6 +151,7 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'styled-components/vim-styled-components'
+Plugin 'mhinz/vim-signify'
 
 " 设置Vundle
 
@@ -256,6 +257,9 @@ let g:ale_sign_warning = '🎃'
 let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
 " let g:ale_open_list = 1
 " let g:ale_fix_on_save = 1
+
+" vim-signify
+let g:signify_vcs_list = [ 'git', 'hg' ]
 
 " ---------------vim快捷键设置-------------
 
