@@ -282,8 +282,8 @@ nmap <leader>w :w<CR>
 
 " 设置操作buffer
 nmap <leader>d :bd<CR> " close buffer
-" nnoremap <leader>pr :bp<CR> " pre buffer
-" nnoremap <leader>ne :bn<CR> " next buffer
+nnoremap <leader>, :bp<CR> " pre buffer
+nnoremap <leader>. :bn<CR> " next buffer
 
 " 修改进入normal模式的快捷键
 " inoremap jj <Esc>
@@ -305,6 +305,10 @@ nnoremap <leader>dc :YcmCompleter GoToDeclaration<CR> " 跳转到申明
 nnoremap <leader>df :YcmCompleter GoToDefinition<CR>  " 跳转到定义
 nnoremap <leader>g :YcmCompleter GoTo<CR>             " 这个命令试图执行它所能执行的“最合理的”转到操作
 nnoremap <leader>tp :YcmCompleter GoToType<CR>        " 跳转到type
+
+" ale快捷键设置
+
+nnoremap <leader><S-f> :ALEFix<CR>
 
 " ---------vim-prettier------------
 
