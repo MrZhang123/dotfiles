@@ -125,38 +125,34 @@ endif
 
 " ----------------plugin----------------------
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'mattn/emmet-vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'Raimondi/delimitMate'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'pangloss/vim-javascript'
-" Plugin 'cakebaker/scss-syntax.vim'
-" Plugin 'prettier/vim-prettier'
-" Plugin 'Chiel92/vim-autoformat'
-Plugin 'w0rp/ale'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'Yggdroot/indentLine'
-Plugin 'mxw/vim-jsx'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'styled-components/vim-styled-components'
-Plugin 'mhinz/vim-signify'
 
-" 设置Vundle
+Plug 'Valloric/YouCompleteMe'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'mattn/emmet-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'altercation/vim-colors-solarized'
+Plug 'Raimondi/delimitMate'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'pangloss/vim-javascript'
+" Plug 'cakebaker/scss-syntax.vim'
+" Plug 'prettier/vim-prettier'
+" Plug 'Chiel92/vim-autoformat'
+" Plug 'w0rp/ale'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdcommenter'
+Plug 'Yggdroot/indentLine'
+Plug 'mxw/vim-jsx'
+Plug 'leafgarland/typescript-vim'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'styled-components/vim-styled-components'
+" Plug 'mhinz/vim-signify'
 
-call vundle#end()
-filetype plugin indent on
+call plug#end()
 
 " 设置theme
 
@@ -251,15 +247,15 @@ let g:vim_markdown_conceal = 0
 set conceallevel=0
 
 " ale for linter
-let g:ale_fixers = ['eslint', 'prettier']
-let g:ale_sign_error = '👊'
-let g:ale_sign_warning = '🎃'
-let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
+" let g:ale_fixers = ['eslint', 'prettier']
+" let g:ale_sign_error = '👊'
+" let g:ale_sign_warning = '🎃'
+" let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
 " let g:ale_open_list = 1
 " let g:ale_fix_on_save = 1
 
 " vim-signify
-let g:signify_vcs_list = [ 'git', 'hg' ]
+" let g:signify_vcs_list = [ 'git', 'hg' ]
 
 " ---------------vim快捷键设置-------------
 
@@ -304,7 +300,7 @@ inoremap <expr> <cr>
    \ : getline(".")[col(".")-2:col(".")-1]=="{}" ? "<cr><esc>O"
    \ :                                             "<cr>"
 
-" YCM跳转到定义（只写了js的配置）
+" YCM跳转到定义（只写了js的配置，回跳使用ctrl+o）
 nnoremap <leader>dc :YcmCompleter GoToDeclaration<CR> " 跳转到申明
 nnoremap <leader>df :YcmCompleter GoToDefinition<CR>  " 跳转到定义
 nnoremap <leader>g :YcmCompleter GoTo<CR>             " 这个命令试图执行它所能执行的“最合理的”转到操作
