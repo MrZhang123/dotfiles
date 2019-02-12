@@ -101,8 +101,6 @@ set ignorecase
 
 set smartcase
 
-" 未知
-
 set fileformats=unix,dos,mac
 set fenc=utf-8
 set fencs=utf-8
@@ -123,6 +121,10 @@ if has("gui_running")
 	" set transparency=1
 endif
 
+" 根据不同的文件设置不同的tabsize等
+if has("autocmd")
+  " autocmd FileType html,css,javascript,jsx,javascript.jsx setlocal ts=2 sts=2 sw=2
+endif
 " ----------------plugin----------------------
 
 call plug#begin('~/.vim/plugged')
@@ -177,6 +179,9 @@ set laststatus=2
 let g:airline_theme="powerlineish"
 "let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#left_sep = ' '
+" let g:airline#extensions#tabline#left_alt_sep = '|'
+" let g:airline#extensions#tabline#formatter = 'default'
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " YouCompleteMe
