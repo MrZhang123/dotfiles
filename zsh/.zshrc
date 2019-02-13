@@ -107,4 +107,4 @@ alias mav="mvim -v"
 eval $(thefuck --alias)
 
 # flutter SDK
-export PATH="$PATH:~/flutter/bin"
+export PATH="$PATH:/Users/zhangyi/flutter/bin"
