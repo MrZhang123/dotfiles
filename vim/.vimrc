@@ -313,7 +313,7 @@ nnoremap <leader>tp :YcmCompleter GoToType<CR>        " 跳转到type
 
 " ale快捷键设置
 
-nnoremap <leader><S-f> :ALEFix<CR>
+" nnoremap <leader><S-f> :ALEFix<CR>
 
 " ---------vim-prettier------------
 
