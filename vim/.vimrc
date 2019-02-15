@@ -151,7 +151,7 @@ Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-Plug 'styled-components/vim-styled-components'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 " Plug 'mhinz/vim-signify'
 
 call plug#end()
@@ -191,6 +191,13 @@ let g:ycm_key_list_select_completion = ['<c-n>', '<c-j>']
 let g:ycm_key_list_previous_completion = ['<c-p>', '<c-k>']
 let g:ycm_error_symbol = '💩'
 let g:ycm_warning_symbol = '👻'
+" 按Ctrl-z提示
+" let g:ycm_key_invoke_completion = '<c-z>'
+" 自动提示
+let g:ycm_semantic_triggers =  {
+  \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
+  \ 'cs,lua,javascript': ['re!\w{2}'],
+  \ }
 
 " emmet-vim
 " 设置需要使用emmet的文件
@@ -250,6 +257,7 @@ let g:vim_markdown_conceal = 0
 " vim-json
 " 禁用vim-json隐藏双引号
 set conceallevel=0
+" let g:vim_json_syntax_conceal = 0
 
 " ale for linter
 " let g:ale_fixers = ['eslint', 'prettier']
