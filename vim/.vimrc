@@ -286,17 +286,22 @@ vnoremap <S-k> :m '<-2<CR>gv=gv
 
 " 在Normal和Visual/Select Mode下，设置Tab键和shift-tab键缩进文本
 nmap <tab> V>
-nmap <s-tab> V<
+nmap <S-tab> V<
 vmap <tab> >gv
-vmap <s-tab> <gv
+vmap <S-tab> <gv
 
-" 设置保存快捷键
-nmap <leader>w :w<CR>
+" jump list (previous, next)
+" 由于在vim中Tab和Ctrl-i是等价的，所以修改使用方式
+nnoremap <C-l> <C-i>
+nnoremap <C-h> <C-o>
 
 " 设置操作buffer
 nmap <leader>d :bd<CR> " close buffer
-nnoremap <leader>, :bp<CR> " pre buffer
-nnoremap <leader>. :bn<CR> " next buffer
+nnoremap <S-h> :bp<CR> " pre buffer
+nnoremap <S-l> :bn<CR> " next buffer
+
+" 设置保存快捷键
+nmap <leader>w :w<CR>
 
 " 修改进入normal模式的快捷键
 " inoremap jj <Esc>
