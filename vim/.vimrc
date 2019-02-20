@@ -152,6 +152,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+" Plug 'tpope/vim-surround'
 " Plug 'mhinz/vim-signify'
 
 call plug#end()
@@ -272,8 +273,11 @@ set conceallevel=0
 
 " ---------------vim快捷键设置-------------
 
-" 用空格键来开关代码折叠
-" nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
+" 修改代码折叠，打开快捷键
+" 代码折叠
+nnoremap <S-c> zc
+nnoremap <S-v> zo
+
 
 " 设置移动当前行向上向下快捷键（终端下设置commond键或者Alt键有冲突，所以更改为shift键）
 nnoremap <S-j> :m .+1<CR>==
