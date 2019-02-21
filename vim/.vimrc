@@ -272,12 +272,16 @@ set conceallevel=0
 " let g:signify_vcs_list = [ 'git', 'hg' ]
 
 " ---------------vim快捷键设置-------------
-
+" ---------------vim keyboard reset-------------
 " 修改代码折叠，打开快捷键
 " 代码折叠
-nnoremap <S-c> zc
-nnoremap <S-v> zo
+nnoremap <S-n> zc
+nnoremap <S-m> zo
 
+" jump list (previous, next)
+" 由于在vim中Tab和Ctrl-i是等价的，所以修改使用方式
+nnoremap <C-l> <C-i>
+nnoremap <C-h> <C-o>
 
 " 设置移动当前行向上向下快捷键（终端下设置commond键或者Alt键有冲突，所以更改为shift键）
 nnoremap <S-j> :m .+1<CR>==
@@ -293,11 +297,6 @@ nmap <tab> V>
 nmap <S-tab> V<
 vmap <tab> >gv
 vmap <S-tab> <gv
-
-" jump list (previous, next)
-" 由于在vim中Tab和Ctrl-i是等价的，所以修改使用方式
-nnoremap <C-l> <C-i>
-nnoremap <C-h> <C-o>
 
 " 设置操作buffer
 nmap <leader>d :bd<CR> " close buffer
