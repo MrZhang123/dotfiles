@@ -108,3 +108,6 @@ eval $(thefuck --alias)
 
 # flutter SDK
 export PATH="$PATH:/Users/zhangyi/flutter/bin"
+# set utf-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
