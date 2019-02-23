@@ -154,6 +154,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 " Plug 'tpope/vim-surround'
 " Plug 'mhinz/vim-signify'
+Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
@@ -314,22 +315,15 @@ nmap <leader>w :w<CR>
 
 nnoremap <leader>r :source ~/.vimrc<CR>
 
-" 设置在两个大括号之间回车，直接光标处于两大括号垂直方向中间
-inoremap <expr> <cr>
-   \   getline(".") =~ '\S\s*{$'                 ? "<bs><cr>{<cr>}<esc>O"
-   \ : getline('.') =~ '^\s*{$'                  ? "<cr>}<esc>O"
-   \ : getline(".")[col(".")-2:col(".")-1]=="{}" ? "<cr><esc>O"
-   \ :                                             "<cr>"
-
 " YCM跳转到定义（只写了js的配置，回跳使用ctrl+o）
 nnoremap <leader>dc :YcmCompleter GoToDeclaration<CR> " 跳转到申明
 nnoremap <leader>df :YcmCompleter GoToDefinition<CR>  " 跳转到定义
 nnoremap <leader>g :YcmCompleter GoTo<CR>             " 这个命令试图执行它所能执行的“最合理的”转到操作
 nnoremap <leader>tp :YcmCompleter GoToType<CR>        " 跳转到type
 
-" ale快捷键设置
+" auto-pairs
 
-" nnoremap <leader><S-f> :ALEFix<CR>
+let g:AutoPairsFlyMode = 1
 
 " ---------vim-prettier------------
 
