@@ -87,7 +87,7 @@ set laststatus=2
 
 " 括号匹配
 
-set matchpairs=(:),{:},[:]
+" set matchpairs=(:),{:},[:]
 
 " 设置搜索高亮，搜索完成取消键入“:noh”即可
 
@@ -203,11 +203,8 @@ let g:ycm_semantic_triggers =  {
 
 " emmet-vim
 " 设置需要使用emmet的文件
-
 autocmd FileType html,css,jsx,javascript.jsx EmmetInstall
-
 " 设置启动快捷键为tab
-
 let g:user_emmet_expandabbr_key = '<Tab>'
 let g:user_emmet_mode='a'
 let g:user_emmet_settings = {'javascript.jsx': {'extends': 'jsx'}}
@@ -320,10 +317,6 @@ nnoremap <leader>dc :YcmCompleter GoToDeclaration<CR> " 跳转到申明
 nnoremap <leader>df :YcmCompleter GoToDefinition<CR>  " 跳转到定义
 nnoremap <leader>g :YcmCompleter GoTo<CR>             " 这个命令试图执行它所能执行的“最合理的”转到操作
 nnoremap <leader>tp :YcmCompleter GoToType<CR>        " 跳转到type
-
-" auto-pairs
-
-let g:AutoPairsFlyMode = 1
 
 " ---------vim-prettier------------
 
