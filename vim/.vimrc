@@ -1,104 +1,79 @@
 " ---------------vim set-------------------
-" 在vim中，按<Esc>和按<Ctrl-c>一样，都可以到Normal模式
-" set vim to en
+" in vim <Esc> , <Ctrl-c> and <Ctrl-[> have same effect , they all can enter normal modal
 
+" set vim to en
 let $LANG = 'en_US'
 set langmenu=en_US
 
-" Mac下设置vim共享系统剪切板（所有删除和拷贝工作都默认到匿名寄存器）
-
+" set vim use system clipboard (all delete and copy operation storage vim unnamed register)
 set clipboard=unnamed
 
 " set vim leader is ; default is \
-
 let mapleader=";"
 
-" 设置iterm2内vim滚动
-
+" set vim can scroll in item2
 set mouse=a
 
-" 自动将当前目录设置为包含当前文件的目录，然后按下ctrl-x-f触发提示
-
+" set directory that contain current file is current directory, ctrl-x-f can show directory reminder
 set autochdir
 
-" 显示行号
-
+" show line number
 set number
 
-" 关闭 vi 兼容模式
-
+" close vi compatibility model
 set nocompatible
 
-" 突出显示当前行
-
+" heighlight current line
 set cursorline
 
-" 突出显示当前列
-
+" heighlight current column
 set cursorcolumn
 
-" 打开状态栏标尺
-
+" open ruler
 set ruler
 
-" 设定 tab 长度
-
+" set tab size
 set tabstop=4
 
-" 输入tab时自动将其转化为空格
-
+" automatic change tab to space when enter <Tab>
 set expandtab
 
-" 设定 << 和 >> 命令移动时的宽度为 2
-
+" set << and >> move size
 set shiftwidth=4
 
-" 使得按退格键时可以一次删掉 2 个空格
-
+" set <Backspace> delete space num
 set softtabstop=4
 
-" 插入括号时，短暂地跳转到匹配的对应括号
-
+" when insert the brackets , cursor jump to corresponding brackets brief
 set showmatch
 
-" 开始折叠
-
+" set code fold enable
 set foldenable
 
-" 设置语法折叠
-
+" set syntax fold
 set foldmethod=syntax
 
-"打开文件是默认不折叠代码
-
+" set not fold code when open file
 set foldlevelstart=99
 
-" 设定命令行的行数为 1
-
+" set command line number is 1
 set cmdheight=1
 
-" 显示状态栏 (默认值为 1, 无法显示状态栏)
-
+" set status bar show (default is 1, not show)
 set laststatus=2
 
-" 设置相对行
-
+" set relative line number
 " set relativenumber
-
-" 括号匹配
 
 " set matchpairs=(:),{:},[:]
 
-" 设置搜索高亮，搜索完成取消键入“:noh”即可
-
+" search result heighligh, when enter `:noh` in command line , clean heightlight
 set hlsearch
 
-" 设置默认进行大小写不敏感查找
-
+" set search ignore case(大小写)
 set ignorecase
 
-" 如果有一个大写字母，则切换到大小写敏感查找
-
+" if search have capital , use case for search
 set smartcase
 
 set fileformats=unix,dos,mac
@@ -106,22 +81,22 @@ set fenc=utf-8
 set fencs=utf-8
 set tenc=utf-8
 if has("gui_running")
-	" 隐藏左侧滚动条
+	" hidden left scroll line
 	set guioptions-=L
-	" 隐藏右侧滚动条
+	" hidden right scroll line
 	set guioptions-=r
-	" 隐藏底部滚动条
+	" hidden bottom scroll line
 	set guioptions-=b
-	" 设置字体
+	" set font
 	set macligatures
 	set guifont=Dank\ Mono:h18
   " set guifont=OperatorMono-Book:h18
   " set guifont=Fira\ Code:h18
-	" 设置透明背景
+	" set background opacity
 	" set transparency=1
 endif
 
-" 根据不同的文件设置不同的tabsize等
+" set tabsize for different files
 if has("autocmd")
   " autocmd FileType html,css,javascript,jsx,javascript.jsx setlocal ts=2 sts=2 sw=2
 endif
@@ -158,25 +133,21 @@ Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
-" 设置theme
+" set theme
 
-syntax on " 开启插件
-syntax enable " 开启语法高亮
+syntax on " use plugin
+syntax enable " use code heighlight
 set background=dark
 colorscheme solarized
 
-" 设置CtrlP
-
+" CtrlP
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip " MacOSX/Linux
-
 let g:ctrlp_custom_ignore = { 'dir': 'build$\|node_modules$' }
-
 " Ignore files in .gitignore
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 
-" airline设置
-
+" airline
 set laststatus=2
 let g:airline_theme="powerlineish"
 "let g:airline_powerline_fonts=1
@@ -187,35 +158,32 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " YouCompleteMe
-
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_key_list_select_completion = ['<c-n>', '<c-j>']
 let g:ycm_key_list_previous_completion = ['<c-p>', '<c-k>']
 let g:ycm_error_symbol = '💩'
 let g:ycm_warning_symbol = '👻'
-" 按Ctrl-z提示
+" Ctrl-z trigger reminder
 " let g:ycm_key_invoke_completion = '<c-z>'
-" 自动提示
+" automatic reminder
 let g:ycm_semantic_triggers =  {
   \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
   \ 'cs,lua,javascript': ['re!\w{2}'],
   \ }
 
 " emmet-vim
-" 设置需要使用emmet的文件
+" set file type that can sue emmet
 autocmd FileType html,css,jsx,javascript.jsx EmmetInstall
-" 设置启动快捷键为tab
+" set trigger key is <Tab>
 let g:user_emmet_expandabbr_key = '<Tab>'
 let g:user_emmet_mode='a'
 let g:user_emmet_settings = {'javascript.jsx': {'extends': 'jsx'}}
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 " vim-jsx
-
 let g:jsx_ext_required = 0
 
 " scss-syntax
-
 " au FileType scss set iskeyword+=-
 " au BufRead,BufNewFile *.scss set filetype=scss.css
 
@@ -224,22 +192,16 @@ let g:indentLine_enabled = 1
 let g:indentLine_char = '⎸'
 
 " The NERDTree
-
-" Ctrl n 打开关闭NERDTree
-
+" set Ctrl-n to open NERDTree
 map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
-
 " NERDTreeIgnore
 let NERDTreeIgnore = ['\.swp$', '.DS_Store']
-
-" 显示点开头的文件
-
+" show hidden file (eg: .gitignore)
 let NERDTreeShowHidden=1
 
 " nerdcommenter
-
 let g:NERDSpaceDelims=1
 " suport react jsx
 let g:NERDCustomDelimiters={
@@ -254,7 +216,7 @@ let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_conceal = 0
 
 " vim-json
-" 禁用vim-json隐藏双引号
+" disable concealing of double quotes
 set conceallevel=0
 " let g:vim_json_syntax_conceal = 0
 
@@ -269,54 +231,51 @@ set conceallevel=0
 " vim-signify
 " let g:signify_vcs_list = [ 'git', 'hg' ]
 
-" ---------------vim快捷键设置-------------
-" ---------------vim keyboard reset-------------
-" 修改代码折叠，打开快捷键
-" 代码折叠
+" ---------------vim keyboard redefine-------------
+" redefine code fold key
+" code fold
 nnoremap <S-n> zc
 nnoremap <S-m> zo
 
-" jump list (previous, next)
-" 由于在vim中Tab和Ctrl-i是等价的，所以修改使用方式
+" jump list (previous, next) (<Tab> and <Ctrl-i> is same in vim , so use <Ctrl-l> replace <Ctrl-i> for jump list)
 nnoremap <C-l> <C-i>
 nnoremap <C-h> <C-o>
 
-" 设置移动当前行向上向下快捷键（终端下设置commond键或者Alt键有冲突，所以更改为shift键）
+" move current line (<commond> and <Alt> has conflict in terminal , so use <Shift>)
 nnoremap <S-j> :m .+1<CR>==
 nnoremap <S-k> :m .-2<CR>==
 vnoremap <S-j> :m '>+1<CR>gv=gv
 vnoremap <S-k> :m '<-2<CR>gv=gv
-" 输入模式下由于与输入大写字母冲突，所以注释
+" in insert model , it conflict with input capital, so annotation
 " inoremap <S-j> <Esc>:m .+1<CR>==gi
 " inoremap <S-k> <Esc>:m .-2<CR>==gi
 
-" 在Normal和Visual/Select Mode下，设置Tab键和shift-tab键缩进文本
+" set indentation line key , use in Normal and Visual Modal
 nmap <tab> V>
 nmap <S-tab> V<
 vmap <tab> >gv
 vmap <S-tab> <gv
 
-" 设置操作buffer
+" set control buffer
 nmap <leader>d :bd<CR> " close buffer
 nnoremap <S-h> :bp<CR> " pre buffer
 nnoremap <S-l> :bn<CR> " next buffer
 
-" 设置保存快捷键
+" set save shortcut key
 nmap <leader>w :w<CR>
 
-" 修改进入normal模式的快捷键
+" redfined enter Normal model key
 " inoremap jj <Esc>
 " vnoremap jj <Esc>
 
-" 修改完配置重新加载.vimrc文件
-
+" set reloading vim when change .vimrc
 nnoremap <leader>r :source ~/.vimrc<CR>
 
-" YCM跳转到定义（只写了js的配置，回跳使用ctrl+o）
-nnoremap <leader>dc :YcmCompleter GoToDeclaration<CR> " 跳转到申明
-nnoremap <leader>df :YcmCompleter GoToDefinition<CR>  " 跳转到定义
-nnoremap <leader>g :YcmCompleter GoTo<CR>             " 这个命令试图执行它所能执行的“最合理的”转到操作
-nnoremap <leader>tp :YcmCompleter GoToType<CR>        " 跳转到type
+" YCM GoTo key（jump list pre use <Ctrl-h> , next is <Ctrl-l>）
+nnoremap <leader>dc :YcmCompleter GoToDeclaration<CR> " go to declar
+nnoremap <leader>df :YcmCompleter GoToDefinition<CR>  " go to definit
+nnoremap <leader>g :YcmCompleter GoTo<CR>             " tries to perform the 'most sensible' GoTo operation it can
+nnoremap <leader>tp :YcmCompleter GoToType<CR>        " go to type
 
 " ---------vim-prettier------------
 
