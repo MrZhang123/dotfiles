@@ -130,6 +130,7 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 " Plug 'tpope/vim-surround'
 " Plug 'mhinz/vim-signify'
 Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-surround'
 
 call plug#end()
 
