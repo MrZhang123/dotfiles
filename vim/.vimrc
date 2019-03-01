@@ -171,6 +171,8 @@ let g:ycm_semantic_triggers =  {
   \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
   \ 'cs,lua,javascript': ['re!\w{2}'],
   \ }
+set completeopt=menu,menuone
+let g:ycm_add_preview_to_completeopt = 0
 
 " emmet-vim
 " set file type that can sue emmet
