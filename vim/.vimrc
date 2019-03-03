@@ -131,6 +131,7 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 " Plug 'mhinz/vim-signify'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
+Plug 'jremmen/vim-ripgrep'
 
 call plug#end()
 
@@ -147,6 +148,10 @@ let g:ctrlp_custom_ignore = { 'dir': 'build$\|node_modules$' }
 " Ignore files in .gitignore
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
+" vim rg
+let g:rg_highlight = 1
+let g:rg_format = '%f:%l:%c:%m'
+let g:rg_derive_root = 1
 
 " airline
 set laststatus=2
