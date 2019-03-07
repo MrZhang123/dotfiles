@@ -70,11 +70,18 @@ set laststatus=2
 " search result heighligh, when enter `:noh` in command line , clean heightlight
 set hlsearch
 
-" set search ignore case(大小写)
+" set search ignore case
 set ignorecase
 
 " if search have capital , use case for search
 set smartcase
+
+" Persistenstent undo
+set undofile
+set undodir=$HOME/.vim/undo
+
+set undolevels=1000
+set undoreload=1000
 
 set fileformats=unix,dos,mac
 set fenc=utf-8
