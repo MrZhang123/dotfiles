@@ -169,11 +169,9 @@ let g:rg_derive_root = 1
 " airline
 set laststatus=2
 let g:airline_theme="powerlineish"
-"let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#left_sep = ' '
-" let g:airline#extensions#tabline#left_alt_sep = '|'
-" let g:airline#extensions#tabline#formatter = 'default'
+" formate buffer name
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " YouCompleteMe
