@@ -1,6 +1,9 @@
 " ---------------vim set-------------------
 " in vim <Esc> , <Ctrl-c> and <Ctrl-[> have same effect , they all can enter normal modal
 
+" disable Vim bells sounds
+set visualbell t_vb=
+
 " set vim to en
 let $LANG = 'en_US'
 set langmenu=en_US
