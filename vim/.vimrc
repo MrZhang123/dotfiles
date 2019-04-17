@@ -141,7 +141,9 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 " Plug 'mhinz/vim-signify'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
-Plug 'jremmen/vim-ripgrep'
+
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
