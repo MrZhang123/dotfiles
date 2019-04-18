@@ -128,7 +128,7 @@ Plug 'pangloss/vim-javascript'
 " Plug 'prettier/vim-prettier'
 " Plug 'Chiel92/vim-autoformat'
 " Plug 'w0rp/ale'
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'Yggdroot/indentLine'
@@ -155,21 +155,16 @@ set background=dark
 colorscheme solarized
 
 " CtrlP
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip " MacOSX/Linux
-let g:ctrlp_custom_ignore = { 'dir': 'build$\|node_modules$' }
+" set wildignore+=*/tmp/*,*.so,*.swp,*.zip " MacOSX/Linux
+" let g:ctrlp_custom_ignore = { 'dir': 'build$\|node_modules$' }
 " Ignore files in .gitignore
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+" let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 " use rg with ctrlp
-if executable('rg')
-  set grepprg=rg\ --color=never
-  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
-  let g:ctrlp_use_caching = 0
-endif
-
-" vim rg
-let g:rg_highlight = 1
-let g:rg_format = '%f:%l:%c:%m'
-let g:rg_derive_root = 1
+" if executable('rg')
+  " set grepprg=rg\ --color=never
+  " let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  " let g:ctrlp_use_caching = 0
+" endif
 
 " airline
 set laststatus=2
@@ -300,6 +295,11 @@ nnoremap <leader>dc :YcmCompleter GoToDeclaration<CR> " go to declar
 nnoremap <leader>df :YcmCompleter GoToDefinition<CR>  " go to definit
 nnoremap <leader>g :YcmCompleter GoTo<CR>             " tries to perform the 'most sensible' GoTo operation it can
 nnoremap <leader>tp :YcmCompleter GoToType<CR>        " go to type
+
+" fzf vim
+map <leader>f :Rg<CR>
+map <C-p> :Files<CR>
+
 
 " ---------vim-prettier------------
 
