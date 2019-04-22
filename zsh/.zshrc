@@ -102,7 +102,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 alias git='LANG=en_GB git'
-alias mav="mvim -v"
+alias v="mvim -v"
 
 eval $(thefuck --alias)
 
@@ -111,3 +111,7 @@ export PATH="$PATH:/Users/zhangyi/flutter/bin"
 # set utf-8
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+# fzf
+export FZF_DEFAULT_COMMAND="rg --files --hidden -g'!.git'"
+export FZF_DEFAULT_OPTS="--height 60% --layout=reverse --preview '(bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -500'"

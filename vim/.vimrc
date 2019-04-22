@@ -255,6 +255,10 @@ set conceallevel=0
 " vim-signify
 " let g:signify_vcs_list = [ 'git', 'hg' ]
 
+" vim Ultisnips keyborad change
+" let g:UltiSnipsExpandTrigger='<S-tab>'
+
+
 " ---------------vim keyboard redefine-------------
 " redefine code fold key
 " code fold
