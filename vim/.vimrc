@@ -279,13 +279,13 @@ vnoremap <S-k> :m '<-2<CR>gv=gv
 " inoremap <S-k> <Esc>:m .-2<CR>==gi
 
 " set indentation line key , use in Normal and Visual Modal
-nmap <tab> V>
-nmap <S-tab> V<
-vmap <tab> >gv
-vmap <S-tab> <gv
+nnoremap <tab> V>
+nnoremap <S-tab> V<
+vnoremap <tab> >gv
+vnoremap <S-tab> <gv
 
 " set control buffer
-nmap <leader>d :bd<CR> " close buffer
+nnoremap <leader>d :bd<CR> " close buffer
 nnoremap <S-h> :bp<CR> " pre buffer
 nnoremap <S-l> :bn<CR> " next buffer
 
