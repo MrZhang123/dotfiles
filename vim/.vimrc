@@ -139,7 +139,6 @@ Plug 'leafgarland/typescript-vim'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-" Plug 'tpope/vim-surround'
 " Plug 'mhinz/vim-signify'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
@@ -198,8 +197,10 @@ let g:ycm_add_preview_to_completeopt = 0
 " emmet-vim
 " set file type that can sue emmet
 autocmd FileType html,css,jsx,javascript.jsx EmmetInstall
-" set trigger key is <Tab>
-let g:user_emmet_expandabbr_key = '<Tab>'
+" set trigger key
+let g:user_emmet_expandabbr_key = '<tab>'
+" trigger key is Ctrl-z + ,
+" let g:user_emmet_leader_key='<C-Z>'
 let g:user_emmet_mode='a'
 let g:user_emmet_settings = {'javascript.jsx': {'extends': 'jsx'}}
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
@@ -256,7 +257,9 @@ set conceallevel=0
 " let g:signify_vcs_list = [ 'git', 'hg' ]
 
 " vim Ultisnips keyborad change
-" let g:UltiSnipsExpandTrigger='<S-tab>'
+let g:UltiSnipsExpandTrigger='<leader><tab>'
+let g:UltiSnipsJumpForwardTrigger='<leader>j'
+let g:UltiSnipsJumpBackwardTrigger='<leader>k'
 
 
 " ---------------vim keyboard redefine-------------
