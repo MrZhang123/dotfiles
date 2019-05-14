@@ -257,9 +257,9 @@ set conceallevel=0
 " let g:signify_vcs_list = [ 'git', 'hg' ]
 
 " vim Ultisnips keyborad change
-let g:UltiSnipsExpandTrigger='<leader><tab>'
-let g:UltiSnipsJumpForwardTrigger='<leader>j'
-let g:UltiSnipsJumpBackwardTrigger='<leader>k'
+let g:UltiSnipsExpandTrigger='<c-e>'
+let g:UltiSnipsJumpForwardTrigger='<c-j>'
+let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 
 
 " ---------------vim keyboard redefine-------------
