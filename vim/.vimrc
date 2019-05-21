@@ -204,7 +204,6 @@ let g:user_emmet_expandabbr_key = '<tab>'
 " let g:user_emmet_leader_key='<C-Z>'
 let g:user_emmet_mode='a'
 let g:user_emmet_settings = {'javascript.jsx': {'extends': 'jsx'}}
-imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 " vim-jsx
 let g:jsx_ext_required = 0
