@@ -138,6 +138,7 @@ Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'elzr/vim-json'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 " Plug 'mhinz/vim-signify'
 Plug 'jiangmiao/auto-pairs'
@@ -242,8 +243,8 @@ let g:vim_markdown_conceal = 0
 
 " vim-json
 " disable concealing of double quotes
-set conceallevel=0
-" let g:vim_json_syntax_conceal = 0
+" set conceallevel=0
+let g:vim_json_syntax_conceal = 0
 
 " ale for linter
 " let g:ale_fixers = ['eslint', 'prettier']
