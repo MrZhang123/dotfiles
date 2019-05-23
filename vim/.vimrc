@@ -119,7 +119,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'Valloric/YouCompleteMe'
 Plug 'hail2u/vim-css3-syntax'
-Plug 'mattn/emmet-vim'
+" Plug 'mattn/emmet-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'altercation/vim-colors-solarized'
@@ -197,13 +197,13 @@ let g:ycm_add_preview_to_completeopt = 0
 
 " emmet-vim
 " set file type that can sue emmet
-autocmd FileType html,css,jsx,javascript.jsx EmmetInstall
+" autocmd FileType html,css,jsx,javascript.jsx EmmetInstall
+
 " set trigger key
-let g:user_emmet_expandabbr_key = '<tab>'
-" trigger key is Ctrl-z + ,
-" let g:user_emmet_leader_key='<C-Z>'
-let g:user_emmet_mode='a'
-let g:user_emmet_settings = {'javascript.jsx': {'extends': 'jsx'}}
+
+" let g:user_emmet_mode='a'
+" let g:user_emmet_settings = {'javascript.jsx': {'extends': 'jsx'}}
+" imap <expr> <tab> emmet#expandAbbrIntelligent('\<tab>')
 
 " vim-jsx
 let g:jsx_ext_required = 0
