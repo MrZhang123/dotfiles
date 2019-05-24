@@ -119,7 +119,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'Valloric/YouCompleteMe'
 Plug 'hail2u/vim-css3-syntax'
-" Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'altercation/vim-colors-solarized'
@@ -197,12 +197,14 @@ let g:ycm_add_preview_to_completeopt = 0
 
 " emmet-vim
 " set file type that can sue emmet
-" autocmd FileType html,css,jsx,javascript.jsx EmmetInstall
+autocmd FileType html,css,jsx,javascript.jsx EmmetInstall
 
 " set trigger key
+let g:user_emmet_expandabbr_key='<Tab>'
+" let g:user_emmet_leader_key='<C-Z>'
 
-" let g:user_emmet_mode='a'
-" let g:user_emmet_settings = {'javascript.jsx': {'extends': 'jsx'}}
+let g:user_emmet_mode='a'
+let g:user_emmet_settings = {'javascript.jsx': {'extends': 'jsx'}}
 " imap <expr> <tab> emmet#expandAbbrIntelligent('\<tab>')
 
 " vim-jsx
@@ -312,6 +314,14 @@ nnoremap <leader>tp :YcmCompleter GoToType<CR>        " go to type
 map <leader>f :Rg<CR>
 map <C-p> :Files<CR>
 
+" use black hole register for delete not shear
+nnoremap <leader>x ""x
+nnoremap <leader>X ""X
+nnoremap <leader>d ""d
+nnoremap <leader>dd ""dd
+nnoremap <leader>D ""D
+vnoremap <leader>d ""d
+vnoremap <leader>dd ""dd
 
 " ---------vim-prettier------------
 
