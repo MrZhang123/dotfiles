@@ -311,8 +311,10 @@ nnoremap <leader>g :YcmCompleter GoTo<CR>             " tries to perform the 'mo
 nnoremap <leader>tp :YcmCompleter GoToType<CR>        " go to type
 
 " fzf vim
-map <leader>f :Rg<CR>
-map <C-p> :Files<CR>
+nnoremap <leader>f :Rg<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <C-p> :Files<CR>
+
 
 " use black hole register for delete not shear
 nnoremap <leader>x ""x
