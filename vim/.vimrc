@@ -200,7 +200,7 @@ let g:ycm_add_preview_to_completeopt = 0
 autocmd FileType html,css,jsx,javascript.jsx EmmetInstall
 
 " set trigger key
-let g:user_emmet_expandabbr_key='<Tab>'
+let g:user_emmet_expandabbr_key='<leader><Tab>'
 " let g:user_emmet_leader_key='<C-Z>'
 
 let g:user_emmet_mode='a'
