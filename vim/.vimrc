@@ -108,7 +108,7 @@ endif
 
 " set tabsize for different files
 if has("autocmd")
-  " autocmd FileType html,css,javascript,jsx,javascript.jsx setlocal ts=2 sts=2 sw=2
+  autocmd FileType dart setlocal ts=2 sts=2 sw=2
   " react snippets
   autocmd FileType jsx,javascript.jsx UltiSnipsAddFiletypes javascript-es6-react.snippets
 endif
