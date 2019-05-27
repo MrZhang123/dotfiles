@@ -201,8 +201,8 @@ let g:ycm_add_preview_to_completeopt = 0
 autocmd FileType html,css,jsx,javascript.jsx EmmetInstall
 
 " set trigger key
-let g:user_emmet_expandabbr_key='<leader><Tab>'
-" let g:user_emmet_leader_key='<C-Z>'
+let g:user_emmet_expandabbr_key='<C-o>'
+" let g:user_emmet_leader_key='<Ctrl>'
 
 let g:user_emmet_mode='a'
 let g:user_emmet_settings = {'javascript.jsx': {'extends': 'jsx'}}
@@ -315,16 +315,6 @@ nnoremap <leader>tp :YcmCompleter GoToType<CR>        " go to type
 nnoremap <leader>f :Rg<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <C-p> :Files<CR>
-
-
-" use black hole register for delete not shear
-nnoremap <leader>x ""x
-nnoremap <leader>X ""X
-nnoremap <leader>d ""d
-nnoremap <leader>dd ""dd
-nnoremap <leader>D ""D
-vnoremap <leader>d ""d
-vnoremap <leader>dd ""dd
 
 " ---------vim-prettier------------
 
