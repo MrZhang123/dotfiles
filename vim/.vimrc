@@ -264,6 +264,15 @@ let g:UltiSnipsExpandTrigger='<c-e>'
 let g:UltiSnipsJumpForwardTrigger='<c-j>'
 let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 
+" fzf
+" fzf use rg search config
+command! -bang -nargs=* Rg
+      \ call fzf#vim#grep(
+      \   "rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>),
+      \   1,
+      \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
+      \   : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
+      \   <bang>0)
 
 " ---------------vim keyboard redefine-------------
 " redefine code fold key
@@ -312,7 +321,7 @@ nnoremap <leader>g :YcmCompleter GoTo<CR>             " tries to perform the 'mo
 nnoremap <leader>tp :YcmCompleter GoToType<CR>        " go to type
 
 " fzf vim
-nnoremap <leader>f :Rg<CR>
+nnoremap  <silent> <Leader>rg :Rg<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <C-p> :Files<CR>
 
