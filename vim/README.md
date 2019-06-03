@@ -2,7 +2,7 @@
 
 ### 使用的插件
 
-> 使用(vim-plug)[https://github.com/junegunn/vim-plug]作为插件管理工具
+> 使用[vim-plug](https://github.com/junegunn/vim-plug)作为插件管理工具
 
 ```sh
 Plug 'Valloric/YouCompleteMe'
