@@ -12,7 +12,7 @@ set langmenu=en_US
 set clipboard=unnamed
 
 " set vim leader is ; default is \
-let mapleader=";"
+let mapleader=';'
 
 " set vim can scroll in item2
 set mouse=a
@@ -116,7 +116,6 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-
 Plug 'Valloric/YouCompleteMe'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'mattn/emmet-vim'
@@ -199,7 +198,6 @@ let g:ycm_add_preview_to_completeopt = 0
 " emmet-vim
 " set file type that can sue emmet
 autocmd FileType html,css,jsx,javascript.jsx EmmetInstall
-
 " set trigger key
 let g:user_emmet_expandabbr_key='<C-o>'
 " let g:user_emmet_leader_key='<Ctrl>'
@@ -261,8 +259,8 @@ let g:vim_json_syntax_conceal = 0
 
 " vim Ultisnips keyborad change
 let g:UltiSnipsExpandTrigger='<c-e>'
-let g:UltiSnipsJumpForwardTrigger='<c-j>'
-let g:UltiSnipsJumpBackwardTrigger='<c-k>'
+" let g:UltiSnipsJumpForwardTrigger='<c-j>'
+" let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 
 " fzf
 " fzf use rg search config
@@ -306,14 +304,10 @@ nnoremap <S-h> :bp<CR> " pre buffer
 nnoremap <S-l> :bn<CR> " next buffer
 
 " set save shortcut key
-nmap <leader>w :w<CR>
-
-" redfined enter Normal model key
-" inoremap jj <Esc>
-" vnoremap jj <Esc>
+nnoremap <silent> <leader>w :w<CR>
 
 " set reloading vim when change .vimrc
-nnoremap <leader>r :source ~/.vimrc<CR>
+nnoremap <silent> <leader>r :source ~/.vimrc<CR>
 
 " YCM GoTo key（jump list pre use <Ctrl-h> , next is <Ctrl-l>）
 nnoremap <leader>dc :YcmCompleter GoToDeclaration<CR> " go to declar
