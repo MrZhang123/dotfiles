@@ -272,6 +272,9 @@ command! -bang -nargs=* Rg
       \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
       \   : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
       \   <bang>0)
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
 
 " ---------------vim keyboard redefine-------------
 " redefine code fold key

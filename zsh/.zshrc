@@ -114,4 +114,5 @@ export LANG=en_US.UTF-8
 
 # fzf
 export FZF_DEFAULT_COMMAND="rg --files --hidden -g'!.git'"
-export FZF_DEFAULT_OPTS="--height 60% --layout=reverse --preview '(bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -500'"
+export FZF_DEFAULT_OPTS="--height 60% --layout=reverse"
+# export FZF_DEFAULT_OPTS="--height 60% --layout=reverse --preview '(bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -500'"
