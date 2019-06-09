@@ -304,9 +304,9 @@ vnoremap <tab> >gv
 vnoremap <S-tab> <gv
 
 " set control buffer
-nnoremap <leader>d :bd<CR> " close buffer
-nnoremap <S-h> :bp<CR> " pre buffer
-nnoremap <S-l> :bn<CR> " next buffer
+nnoremap <silent> <leader>d :bd<CR> " close buffer
+nnoremap <silent> <S-h> :bp<CR> " pre buffer
+nnoremap <silent> <S-l> :bn<CR> " next buffer
 
 " set control tabs
 nnoremap <silent> <leader>tn :tabnew<CR>
