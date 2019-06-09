@@ -49,7 +49,7 @@ Plug 'junegunn/fzf.vim'
 * Ctrl-l 往后跳转list
 * Ctrl-h 往前跳转list
 
-⚠️ ：在vim中，`<Tab>`和`<Ctrl-i>`的功能是一样的，为了不冲突，修改快捷键
+⚠️ 在vim中，`<Tab>`和`<Ctrl-i>`的功能是一样的，为了不冲突，修改快捷键
 
 ##### 移动当前行
 
@@ -65,7 +65,7 @@ Plug 'junegunn/fzf.vim'
 * Tab 向后缩进
 * Shift-Tab 向前缩进
 
-⚠️ ：**这里因为用到tab作为缩进的快捷键，所以如果其他插件使用tab做快捷键，可能会出现影响，这里要注意一下**
+⚠️ **这里因为用到tab作为缩进的快捷键，所以如果其他插件使用tab做快捷键，可能会出现影响，这里要注意一下**
 
 ##### 操作buffer
 
@@ -74,6 +74,13 @@ Plug 'junegunn/fzf.vim'
 * ;d 关闭当前buffer
 * Shift-h 移动到前一个buffer
 * Shift-l 移动到后一个buffer
+
+##### 操作tab
+
+* ;tn 新建tab
+* ;th 前一个tab
+* ;tl 后一个tab
+* ;tc 关闭当前tab
 
 ##### 保存文件
 

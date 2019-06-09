@@ -173,11 +173,13 @@ colorscheme solarized
 
 " airline
 set laststatus=2
-let g:airline_theme="powerlineish"
+let g:airline_theme='powerlineish'
 let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#show_buffers = 1
+" let g:airline#extensions#tabline#show_tabs = 0
 " formate buffer name
 let g:airline#extensions#tabline#formatter = 'unique_tail'
-let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#buffer_nr_show = 0
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -305,6 +307,12 @@ vnoremap <S-tab> <gv
 nnoremap <leader>d :bd<CR> " close buffer
 nnoremap <S-h> :bp<CR> " pre buffer
 nnoremap <S-l> :bn<CR> " next buffer
+
+" set control tabs
+nnoremap <silent> <leader>tn :tabnew<CR>
+nnoremap <silent> <leader>th :tabp<CR>
+nnoremap <silent> <leader>tl :tabn<CR>
+nnoremap <silent> <leader>tc :tabclose<CR>
 
 " set save shortcut key
 nnoremap <silent> <leader>w :w<CR>
