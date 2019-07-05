@@ -103,6 +103,7 @@ export NVM_DIR="$HOME/.nvm"
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 alias git='LANG=en_GB git'
 alias v="mvim -v"
+alias vs="code"
 
 eval $(thefuck --alias)
 
@@ -112,7 +113,9 @@ export PATH="$PATH:/Users/zhangyi/flutter/bin"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-# fzf
+# fzf config
 export FZF_DEFAULT_COMMAND="rg --files --hidden -g'!.git'"
 export FZF_DEFAULT_OPTS="--height 60% --layout=reverse"
 # export FZF_DEFAULT_OPTS="--height 60% --layout=reverse --preview '(bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -500'"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
