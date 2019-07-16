@@ -242,7 +242,7 @@ let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_math = 1
 let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_conceal = 0
-let g:vim_markdown_fenced_languages = ['javascript=js', 'golang=go', 'python=py']
+let g:vim_markdown_fenced_languages = ['js=javascript', 'go=golang', 'py=python']
 
 " vim-json
 " disable concealing of double quotes
