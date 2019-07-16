@@ -242,6 +242,7 @@ let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_math = 1
 let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_conceal = 0
+let g:vim_markdown_fenced_languages = ['javascript=js', 'golang=go', 'python=py']
 
 " vim-json
 " disable concealing of double quotes
@@ -310,7 +311,9 @@ nnoremap <silent> <S-l> :bn<CR> " next buffer
 
 " set control tabs
 nnoremap <silent> <leader>tn :tabnew<CR>
+ " gt
 nnoremap <silent> <leader>th :tabp<CR>
+" gT
 nnoremap <silent> <leader>tl :tabn<CR>
 nnoremap <silent> <leader>tc :tabclose<CR>
 
