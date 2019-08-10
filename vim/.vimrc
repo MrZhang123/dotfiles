@@ -125,6 +125,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'Raimondi/delimitMate'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'pangloss/vim-javascript'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Plug 'cakebaker/scss-syntax.vim'
 " Plug 'prettier/vim-prettier'
 " Plug 'Chiel92/vim-autoformat'
