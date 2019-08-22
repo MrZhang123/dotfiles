@@ -150,6 +150,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'dart-lang/dart-vim-plugin'
+Plug 'mhinz/vim-signify'
 
 call plug#end()
 
