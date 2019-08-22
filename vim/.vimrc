@@ -151,6 +151,8 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'mhinz/vim-signify'
+" rely on ctags, use new ctags universal-ctags , https://github.com/universal-ctags/ctags
+Plug 'liuchengxu/vista.vim'
 
 call plug#end()
 
@@ -280,6 +282,11 @@ command! -bang -nargs=* Rg
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
+" visa tagbar
+let g:vista#renderer#ctags = 'vista_kind'
+" disable icon
+let g:vista#renderer#enable_icon = 0
+
 
 " ---------------vim keyboard redefine-------------
 " redefine code fold key
@@ -335,6 +342,9 @@ nnoremap <leader>tp :YcmCompleter GoToType<CR>        " go to type
 nnoremap  <silent> <Leader>rg :Rg<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <C-p> :Files<CR>
+
+" visa tagbar
+nnoremap <silent><leader><C-n> :Vista!!<CR>
 
 " ---------vim-prettier------------
 
