@@ -150,7 +150,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'dart-lang/dart-vim-plugin'
-Plug 'mhinz/vim-signify'
 " rely on ctags, use new ctags universal-ctags , https://github.com/universal-ctags/ctags
 " brew install --HEAD --with-jansson universal-ctags/universal-ctags/universal-ctags
 Plug 'liuchengxu/vista.vim'
@@ -286,6 +285,7 @@ command! -bang -nargs=? -complete=dir Files
 " visa tagbar
 " disable icon , because need special font
 let g:vista#renderer#enable_icon = 0
+let g:vista_sidebar_width = 50
 
 " ---------------vim keyboard redefine-------------
 " redefine code fold key
