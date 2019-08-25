@@ -149,7 +149,7 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'dart-lang/dart-vim-plugin', { 'for': 'dart' }
+" Plug 'dart-lang/dart-vim-plugin', { 'for': 'dart' }
 " rely on ctags, use new ctags universal-ctags , https://github.com/universal-ctags/ctags
 " brew install --HEAD --with-jansson universal-ctags/universal-ctags/universal-ctags
 Plug 'liuchengxu/vista.vim'
