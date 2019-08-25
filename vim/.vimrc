@@ -117,15 +117,15 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'Valloric/YouCompleteMe'
-Plug 'hail2u/vim-css3-syntax'
+Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'mattn/emmet-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'altercation/vim-colors-solarized'
 Plug 'Raimondi/delimitMate'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'pangloss/vim-javascript'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
 " Plug 'cakebaker/scss-syntax.vim'
 " Plug 'prettier/vim-prettier'
 " Plug 'Chiel92/vim-autoformat'
@@ -134,10 +134,10 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'Yggdroot/indentLine'
-Plug 'mxw/vim-jsx'
-Plug 'leafgarland/typescript-vim'
+Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'elzr/vim-json'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 " Plug 'mhinz/vim-signify'
@@ -149,7 +149,7 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'dart-lang/dart-vim-plugin'
+Plug 'dart-lang/dart-vim-plugin', { 'for': 'dart' }
 " rely on ctags, use new ctags universal-ctags , https://github.com/universal-ctags/ctags
 " brew install --HEAD --with-jansson universal-ctags/universal-ctags/universal-ctags
 Plug 'liuchengxu/vista.vim'
