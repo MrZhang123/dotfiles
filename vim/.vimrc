@@ -118,7 +118,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'Valloric/YouCompleteMe'
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
-Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim', { 'for': 'html', 'for': 'javascript.jsx' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'altercation/vim-colors-solarized'
