@@ -122,7 +122,6 @@ Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript.jsx'] }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'altercation/vim-colors-solarized'
-Plug 'Raimondi/delimitMate'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
@@ -139,7 +138,6 @@ Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'elzr/vim-json'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 " Plug 'mhinz/vim-signify'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
