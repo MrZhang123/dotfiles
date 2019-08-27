@@ -3,6 +3,7 @@
 
 " disable Vim bells sounds
 set visualbell t_vb=
+set t_Co=256
 
 " set vim to en
 let $LANG = 'en_US'
@@ -51,13 +52,14 @@ set softtabstop=4
 set showmatch
 
 " set code fold enable
-set foldenable
+" set foldenable
 
 " set syntax fold
-set foldmethod=syntax
+" disabled and use FastFold beacuse this set will have performance problem
+" set foldmethod=syntax
 
 " set not fold code when open file
-set foldlevelstart=99
+" set foldlevelstart=99
 
 " set command line number is 1
 set cmdheight=1
@@ -112,6 +114,7 @@ if has("autocmd")
   " react snippets
   autocmd FileType jsx,javascript.jsx UltiSnipsAddFiletypes javascript-es6-react.snippets
 endif
+
 " ----------------plugin----------------------
 
 call plug#begin('~/.vim/plugged')
@@ -123,6 +126,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'altercation/vim-colors-solarized'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoUpdateBinaries' }
 " Plug 'cakebaker/scss-syntax.vim'
@@ -133,7 +137,6 @@ Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoUpdateBinaries' }
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'Yggdroot/indentLine'
-Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
@@ -198,6 +201,10 @@ let g:ycm_semantic_triggers =  {
   \ }
 set completeopt=menu,menuone
 let g:ycm_add_preview_to_completeopt = 0
+" set vim pop color
+highlight PMenu ctermfg=128 ctermbg=15 guifg=lightmagenta guibg=black
+highlight PMenuSel ctermfg=15 ctermbg=0 guifg=black guibg=white
+
 
 " emmet-vim
 " set file type that can sue emmet
@@ -288,8 +295,8 @@ let g:vista_sidebar_width = 50
 " ---------------vim keyboard redefine-------------
 " redefine code fold key
 " code fold
-nnoremap <S-n> zc
-nnoremap <S-m> zo
+" nnoremap <S-n> zc
+" nnoremap <S-m> zo
 
 " jump list (previous, next) (<Tab> and <Ctrl-i> is same in vim , so use <Ctrl-l> replace <Ctrl-i> for jump list)
 nnoremap <C-l> <C-i>
