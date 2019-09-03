@@ -190,6 +190,8 @@ let g:airline#extensions#tabline#buffer_nr_show = 0
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_key_list_select_completion = ['<c-n>', '<c-j>']
 let g:ycm_key_list_previous_completion = ['<c-p>', '<c-k>']
+" disable diagnostics ui
+let g:ycm_show_diagnostics_ui = 0
 let g:ycm_error_symbol = '💩'
 let g:ycm_warning_symbol = '👻'
 " Ctrl-z trigger reminder
