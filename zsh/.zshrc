@@ -119,3 +119,8 @@ export FZF_DEFAULT_OPTS="--height 60% --layout=reverse"
 # export FZF_DEFAULT_OPTS="--height 60% --layout=reverse --preview '(bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -500'"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# golang
+# export GOPATH="$HOME/Documents/goWork"
+# export GOBIN="$GOPATH/bin"
+export GOPROXY=https://goproxy.iogoproxy.io
