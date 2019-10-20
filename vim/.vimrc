@@ -203,9 +203,12 @@ let g:ycm_semantic_triggers =  {
   \ }
 set completeopt=menu,menuone
 let g:ycm_add_preview_to_completeopt = 0
+
 " set vim pop color
-highlight PMenu ctermfg=55 ctermbg=15 guifg=lightmagenta guibg=black
-highlight PMenuSel ctermfg=15 ctermbg=0 guifg=black guibg=white
+highlight PMenu ctermfg=55 ctermbg=15 guifg=purple4 guibg=white
+
+highlight PMenuSel ctermfg=15 ctermbg=0 guifg=white guibg=black
+
 
 
 " emmet-vim
