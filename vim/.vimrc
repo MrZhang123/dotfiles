@@ -37,16 +37,16 @@ set cursorcolumn
 set ruler
 
 " set tab size
-set tabstop=4
+set tabstop=2
 
 " automatic change tab to space when enter <Tab>
 set expandtab
 
 " set << and >> move size
-set shiftwidth=4
+set shiftwidth=2
 
 " set <Backspace> delete space num
-set softtabstop=4
+set softtabstop=2
 
 " when insert the brackets , cursor jump to corresponding brackets brief
 set showmatch
@@ -110,7 +110,7 @@ endif
 
 " set tabsize for different files
 if has("autocmd")
-  autocmd FileType dart setlocal ts=2 sts=2 sw=2
+  autocmd FileType dart,jsx,javascript setlocal ts=2 sts=2 sw=2
   " react snippets
   autocmd FileType jsx,javascript.jsx UltiSnipsAddFiletypes javascript-es6-react.snippets
 endif
@@ -363,8 +363,8 @@ nnoremap <silent><leader><C-n> :Vista!!<CR>
 
 " number of spaces per indentation level
 " Prettier default: 2
-let g:prettier#config#tab_width = 4
-let g:prettier#config#tab_size = 4
+let g:prettier#config#tab_width = 2
+let g:prettier#config#tab_size = 2
 
 " use tabs over spaces
 " Prettier default: false
