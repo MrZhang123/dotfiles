@@ -111,6 +111,7 @@ endif
 " set tabsize for different files
 if has("autocmd")
   autocmd FileType dart,jsx,javascript setlocal ts=2 sts=2 sw=2
+  autocmd FileType go setlocal ts=4 sts=4 sw=4
   " react snippets
   autocmd FileType jsx,javascript.jsx UltiSnipsAddFiletypes javascript-es6-react.snippets
 endif
@@ -191,7 +192,12 @@ let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_key_list_select_completion = ['<c-n>', '<c-j>']
 let g:ycm_key_list_previous_completion = ['<c-p>', '<c-k>']
 " disable diagnostics ui
+
+" ycm disable diagnostic
 let g:ycm_show_diagnostics_ui = 0
+let g:ycm_enable_diagnostic_signs = 0
+let g:ycm_enable_diagnostic_highlighting = 0
+
 let g:ycm_error_symbol = '💩'
 let g:ycm_warning_symbol = '👻'
 " Ctrl-z trigger reminder
