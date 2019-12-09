@@ -130,7 +130,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoUpdateBinaries' }
-" Plug 'cakebaker/scss-syntax.vim'
 " Plug 'prettier/vim-prettier'
 " Plug 'Chiel92/vim-autoformat'
 " Plug 'w0rp/ale'
@@ -142,17 +141,15 @@ Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'elzr/vim-json', { 'for': ['markdown', 'json'] }
-" Plug 'mhinz/vim-signify'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
-" Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-" Plug 'dart-lang/dart-vim-plugin', { 'for': 'dart' }
 " rely on ctags, use new ctags universal-ctags , https://github.com/universal-ctags/ctags
 " brew install --HEAD --with-jansson universal-ctags/universal-ctags/universal-ctags
 Plug 'liuchengxu/vista.vim'
