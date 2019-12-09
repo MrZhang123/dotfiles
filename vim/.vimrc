@@ -145,6 +145,7 @@ Plug 'elzr/vim-json', { 'for': ['markdown', 'json'] }
 " Plug 'mhinz/vim-signify'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
+" Plug 'airblade/vim-gitgutter'
 
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
