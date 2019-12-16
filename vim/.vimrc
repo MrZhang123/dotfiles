@@ -121,7 +121,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'Valloric/YouCompleteMe'
-Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
+" Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript.jsx'] }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -138,12 +138,11 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'Yggdroot/indentLine'
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-Plug 'godlygeek/tabular'
+" Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'elzr/vim-json', { 'for': ['markdown', 'json'] }
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
-Plug 'airblade/vim-gitgutter'
 
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
