@@ -81,6 +81,15 @@ set ignorecase
 " if search have capital , use case for search
 set smartcase
 
+" set check spell
+set spell spelllang=en_us
+
+" set no swp files
+set noswapfile
+
+" no back up file
+set nobackup
+
 " Persistenstent undo
 set undofile
 set undodir=$HOME/.vim/undo
