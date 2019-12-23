@@ -4,6 +4,7 @@
 " disable Vim bells sounds
 set visualbell t_vb=
 set t_Co=256
+set encoding=utf-8
 
 " set vim to en
 let $LANG = 'en_US'
@@ -81,9 +82,6 @@ set ignorecase
 " if search have capital , use case for search
 set smartcase
 
-" set check spell
-set spell spelllang=en_us
-
 " set no swp files
 set noswapfile
 
@@ -98,9 +96,9 @@ set undolevels=1000
 set undoreload=1000
 
 set fileformats=unix,dos,mac
-set fenc=utf-8
-set fencs=utf-8
-set tenc=utf-8
+" set fenc=utf-8
+" set fencs=utf-8
+" set tenc=utf-8
 if has("gui_running")
 	" hidden left scroll line
 	set guioptions-=L
