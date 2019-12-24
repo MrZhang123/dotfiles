@@ -131,7 +131,7 @@ Plug 'Valloric/YouCompleteMe'
 " Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript.jsx'] }
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline-themes'
 Plug 'altercation/vim-colors-solarized'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
@@ -183,7 +183,7 @@ colorscheme solarized
 
 " airline
 set laststatus=2
-let g:airline_theme='powerlineish'
+" let g:airline_theme='powerlineish'
 let g:airline#extensions#tabline#enabled = 1
 " let g:airline#extensions#tabline#show_buffers = 1
 " let g:airline#extensions#tabline#show_tabs = 0
