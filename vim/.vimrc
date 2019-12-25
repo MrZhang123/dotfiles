@@ -29,10 +29,10 @@ set number
 set nocompatible
 
 " heighlight current line
-set cursorline
+" set cursorline
 
 " heighlight current column
-set cursorcolumn
+" set cursorcolumn
 
 " open ruler
 set ruler
@@ -143,7 +143,7 @@ Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoUpdateBinaries' }
 " Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 " Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
