@@ -166,9 +166,14 @@ call plug#end()
 
 syntax on " use plugin
 syntax enable " use code heighlight
-colorscheme pablo
+
+if has("gui_running")
+  colorscheme solarized
+else
+  colorscheme pablo
+endif
+
 set background=dark
-" colorscheme solarized
 
 " CtrlP
 " set wildignore+=*/tmp/*,*.so,*.swp,*.zip " MacOSX/Linux
