@@ -166,6 +166,7 @@ call plug#end()
 
 syntax on " use plugin
 syntax enable " use code heighlight
+" colorscheme pablo
 set background=dark
 colorscheme solarized
 
