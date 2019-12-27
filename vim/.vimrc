@@ -170,7 +170,7 @@ syntax enable " use code heighlight
 if has("gui_running")
   colorscheme solarized
 else
-  colorscheme pablo
+  colorscheme solarized
 endif
 
 set background=dark
