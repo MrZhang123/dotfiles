@@ -132,8 +132,8 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript.jsx'] }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Plug 'altercation/vim-colors-solarized'
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'altercation/vim-colors-solarized'
+" Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
@@ -169,13 +169,11 @@ syntax on " use plugin
 syntax enable " use code heighlight
 
 if has("gui_running")
-  colorscheme dracula
+  colorscheme solarized
 else
-  let g:dracula_italic = 0
-  let g:dracula_colorterm = 0
-  colorscheme dracula
+  colorscheme desert
 endif
-" set background=dark
+set background=dark
 
 " CtrlP
 " set wildignore+=*/tmp/*,*.so,*.swp,*.zip " MacOSX/Linux
@@ -191,7 +189,8 @@ endif
 
 " airline
 set laststatus=2
-let g:airline_theme='powerlineish'
+" let g:airline_theme='powerlineish'
+let g:airline_theme='raven'
 let g:airline#extensions#tabline#enabled = 1
 " let g:airline#extensions#tabline#show_buffers = 1
 " let g:airline#extensions#tabline#show_tabs = 0
