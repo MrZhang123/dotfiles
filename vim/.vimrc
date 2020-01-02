@@ -1,6 +1,9 @@
 " ---------------vim set-------------------
 " in vim <Esc> , <Ctrl-c> and <Ctrl-[> have same effect , they all can enter normal modal
 
+" set backspace can delete all the time
+set backspace=indent,eol,start
+
 " disable Vim bells sounds
 set visualbell t_vb=
 set t_Co=256
