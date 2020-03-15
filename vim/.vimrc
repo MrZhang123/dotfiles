@@ -267,6 +267,7 @@ let NERDTreeShowHidden=1
 
 " nerdcommenter
 let g:NERDSpaceDelims=1
+let g:NERDDefaultAlign = 'left'
 " suport react jsx
 let g:NERDCustomDelimiters={
 	\ 'javascript': { 'left': '//', 'right': '', 'leftAlt': '{/*', 'rightAlt': '*/}' },
