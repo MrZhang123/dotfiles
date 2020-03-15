@@ -303,6 +303,7 @@ let g:UltiSnipsExpandTrigger='<c-e>'
 
 " fzf
 " fzf use rg search config
+let g:fzf_layout = { 'down': '~70%' }
 command! -bang -nargs=* Rg
       \ call fzf#vim#grep(
       \   "rg --column --line-number --no-heading --color=always --smart-case "
@@ -376,6 +377,7 @@ nnoremap <leader>tp :YcmCompleter GoToType<CR>        " go to type
 nnoremap  <silent> <Leader>rg :Rg<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <C-p> :Files<CR>
+" nnoremap <silent> <C-p> :Files <C-R>=expand('%:h')<CR><CR>
 
 " visa tagbar
 nnoremap <silent><leader><C-n> :Vista!!<CR>
