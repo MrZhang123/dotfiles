@@ -334,11 +334,11 @@ let g:gitgutter_terminal_reports_focus=0
 nnoremap <C-l> <C-i>
 nnoremap <C-h> <C-o>
 
-" move current line (<commond> and <Alt> has conflict in terminal , so use <Shift>)
-nnoremap <S-j> :m .+1<CR>==
-nnoremap <S-k> :m .-2<CR>==
-vnoremap <S-j> :m '>+1<CR>gv=gv
-vnoremap <S-k> :m '<-2<CR>gv=gv
+" move current line
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
 " in insert model , it conflict with input capital, so annotation
 " inoremap <S-j> <Esc>:m .+1<CR>==gi
 " inoremap <S-k> <Esc>:m .-2<CR>==gi
