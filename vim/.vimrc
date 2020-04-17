@@ -330,18 +330,18 @@ let g:gitgutter_terminal_reports_focus=0
 " nnoremap <S-n> zc
 " nnoremap <S-m> zo
 
+" use ctrl-j instead of J
+nnoremap <C-j> J
+
 " jump list (previous, next) (<Tab> and <Ctrl-i> is same in vim , so use <Ctrl-l> replace <Ctrl-i> for jump list)
 nnoremap <C-l> <C-i>
 nnoremap <C-h> <C-o>
 
 " move current line
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
-" in insert model , it conflict with input capital, so annotation
-" inoremap <S-j> <Esc>:m .+1<CR>==gi
-" inoremap <S-k> <Esc>:m .-2<CR>==gi
+nnoremap <S-j> :m .+1<CR>==
+nnoremap <S-k> :m .-2<CR>==
+vnoremap <S-j> :m '>+1<CR>gv=gv
+vnoremap <S-k> :m '<-2<CR>gv=gv
 
 " set indentation line key , use in Normal and Visual Modal
 nnoremap <tab> V>
