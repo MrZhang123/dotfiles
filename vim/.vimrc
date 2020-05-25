@@ -98,6 +98,11 @@ set undodir=$HOME/.vim/undo
 set undolevels=1000
 set undoreload=1000
 
+" List autocomplete menu
+" Use <C-d> to list all available
+set wildmenu
+set wildmode=full
+
 set fileformats=unix,dos,mac
 " set fenc=utf-8
 " set fencs=utf-8
@@ -304,7 +309,7 @@ let g:UltiSnipsExpandTrigger='<c-e>'
 
 " fzf
 " fzf use rg search config
-let g:fzf_layout = { 'down': '~70%' }
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8, 'yoffset': 0.5 } }
 command! -bang -nargs=* Rg
       \ call fzf#vim#grep(
       \   "rg --column --line-number --no-heading --color=always --smart-case "
