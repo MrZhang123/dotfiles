@@ -309,7 +309,8 @@ let g:UltiSnipsExpandTrigger='<c-e>'
 
 " fzf
 " fzf use rg search config
-let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8, 'yoffset': 0.5 } }
+let g:fzf_layout = { 'down': '~70%' }
+" let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8, 'yoffset': 0.5 } }
 command! -bang -nargs=* Rg
       \ call fzf#vim#grep(
       \   "rg --column --line-number --no-heading --color=always --smart-case "
