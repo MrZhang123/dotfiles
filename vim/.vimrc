@@ -139,9 +139,8 @@ Plug 'Valloric/YouCompleteMe'
 " Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript.jsx'] }
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline-themes'
 Plug 'altercation/vim-colors-solarized'
-" Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
@@ -198,7 +197,7 @@ set background=dark
 
 " airline
 set laststatus=2
-let g:airline_theme='powerlineish'
+" let g:airline_theme='powerlineish'
 " let g:airline_theme='raven'
 let g:airline#extensions#tabline#enabled = 1
 
