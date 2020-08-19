@@ -1,6 +1,10 @@
 " ---------------vim set-------------------
 " in vim <Esc> , <Ctrl-c> and <Ctrl-[> have same effect , they all can enter normal modal
 
+set re=1
+set ttyfast
+set lazyredraw
+
 " set backspace can delete all the time
 set backspace=indent,eol,start
 
