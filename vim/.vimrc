@@ -5,12 +5,14 @@ set re=1
 set ttyfast
 set lazyredraw
 
+
+
 " set backspace can delete all the time
 set backspace=indent,eol,start
 
 " disable Vim bells sounds
-set visualbell t_vb=
-set t_Co=256
+" set visualbell t_vb=
+" set t_Co=256
 set encoding=utf-8
 
 " set vim to en
@@ -24,7 +26,7 @@ set clipboard=unnamed
 let mapleader=';'
 
 " set vim can scroll in item2
-set mouse=a
+" set mouse=a
 
 " set directory that contain current file is current directory, ctrl-x-f can show directory reminder
 set autochdir
@@ -35,14 +37,14 @@ set number
 " close vi compatibility model
 set nocompatible
 
-" heighlight current line
-" set cursorline
+" close heighlight current line
+set nocursorline
 
-" heighlight current column
-" set cursorcolumn
+" close heighlight current column
+" set nocursorcolumn
 
 " open ruler
-set ruler
+" set ruler
 
 " set tab size
 set tabstop=2
@@ -57,7 +59,7 @@ set shiftwidth=2
 set softtabstop=2
 
 " when insert the brackets , cursor jump to corresponding brackets brief
-set showmatch
+" set showmatch
 
 " set code fold enable
 " set foldenable
@@ -73,7 +75,7 @@ set showmatch
 set cmdheight=1
 
 " set status bar show (default is 1, not show)
-set laststatus=2
+" set laststatus=2
 
 " set relative line number
 " set relativenumber
@@ -129,10 +131,10 @@ endif
 
 " set tabsize for different files
 if has("autocmd")
-  autocmd FileType dart,jsx,javascript setlocal ts=2 sts=2 sw=2
+  autocmd FileType jsx,javascript setlocal ts=2 sts=2 sw=2
   autocmd FileType go setlocal ts=4 sts=4 sw=4
   " react snippets
-  autocmd FileType jsx,javascript.jsx UltiSnipsAddFiletypes javascript-es6-react.snippets
+  " autocmd FileType jsx,javascript.jsx UltiSnipsAddFiletypes javascript-es6-react.snippets
 endif
 
 " ----------------plugin----------------------
