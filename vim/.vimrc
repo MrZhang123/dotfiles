@@ -188,6 +188,7 @@ syntax enable " use code heighlight
 
 if has("gui_running")
   colorscheme solarized
+  " colorscheme desert
 else
   colorscheme desert
   " colorscheme solarized
