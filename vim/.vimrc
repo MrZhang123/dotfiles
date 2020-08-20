@@ -5,7 +5,7 @@ set re=1
 set ttyfast
 " set lazyredraw
 
-set scrolloff=10
+set scrolloff=5
 set noshowcmd
 
 " set synmaxcol=200
