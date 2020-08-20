@@ -3,17 +3,21 @@
 
 set re=1
 set ttyfast
-set lazyredraw
+" set lazyredraw
 
+set scrolloff=10
+set noshowcmd
 
+" set synmaxcol=200
 
 " set backspace can delete all the time
 set backspace=indent,eol,start
 
 " disable Vim bells sounds
-" set visualbell t_vb=
-" set t_Co=256
+set visualbell t_vb=
+set t_Co=256
 set encoding=utf-8
+set t_RV=
 
 " set vim to en
 let $LANG = 'en_US'
@@ -33,6 +37,7 @@ set autochdir
 
 " show line number
 set number
+set norelativenumber
 
 " close vi compatibility model
 set nocompatible
@@ -240,8 +245,6 @@ let g:ycm_add_preview_to_completeopt = 0
 highlight PMenu ctermfg=55 ctermbg=15 guifg=purple4 guibg=white
 
 highlight PMenuSel ctermfg=15 ctermbg=0 guifg=white guibg=black
-
-
 
 " emmet-vim
 " set file type that can sue emmet
