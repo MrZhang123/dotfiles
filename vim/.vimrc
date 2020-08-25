@@ -30,7 +30,7 @@ set clipboard=unnamed
 let mapleader=';'
 
 " set vim can scroll in item2
-" set mouse=a
+set mouse=a
 
 " set directory that contain current file is current directory, ctrl-x-f can show directory reminder
 set autochdir
