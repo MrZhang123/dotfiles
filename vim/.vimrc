@@ -151,7 +151,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript.jsx'] }
 Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
-Plug 'altercation/vim-colors-solarized'
+" Plug 'altercation/vim-colors-solarized'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
@@ -187,8 +187,8 @@ syntax on " use plugin
 syntax enable " use code heighlight
 
 if has("gui_running")
-  colorscheme solarized
-  " colorscheme desert
+  " colorscheme solarized
+  colorscheme desert
 else
   colorscheme desert
   " colorscheme solarized
