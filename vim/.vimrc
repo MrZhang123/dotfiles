@@ -179,7 +179,6 @@ Plug 'honza/vim-snippets'
 " brew install --HEAD --with-jansson universal-ctags/universal-ctags/universal-ctags
 Plug 'liuchengxu/vista.vim'
 " vim inner terminal
-Plug 'skywind3000/vim-terminal-help'
 
 call plug#end()
 
