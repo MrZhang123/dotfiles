@@ -7,6 +7,8 @@ set ttyfast
 
 set scrolloff=3
 set noshowcmd
+" splits to happen below
+set splitbelow
 
 " set synmaxcol=200
 
