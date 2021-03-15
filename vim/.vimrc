@@ -39,8 +39,8 @@ set autochdir
 set number
 set norelativenumber
 
-" close vi compatibility model
-set nocompatible
+" close vi compatibility model --rm
+" set nocompatible
 
 " close heighlight current line
 set nocursorline
@@ -103,7 +103,7 @@ set noswapfile
 set nobackup
 
 " Persistenstent undo
-set undofile
+" set undofile
 set undodir=$HOME/.vim/undo
 
 set undolevels=1000
@@ -178,7 +178,7 @@ Plug 'honza/vim-snippets'
 " rely on ctags, use new ctags universal-ctags , https://github.com/universal-ctags/ctags
 " brew install --HEAD --with-jansson universal-ctags/universal-ctags/universal-ctags
 Plug 'liuchengxu/vista.vim'
-" vim inner terminal
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
@@ -337,8 +337,8 @@ command! -bang -nargs=? -complete=dir Files
 let g:vista#renderer#enable_icon = 0
 let g:vista_sidebar_width = 50
 
-" vim-gitgutter
-let g:gitgutter_terminal_reports_focus=0
+" vim-fugitive
+let g:fugitive_pty = 0
 
 " ---------------vim keyboard redefine-------------
 " redefine code fold key
