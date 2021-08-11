@@ -7,6 +7,8 @@ set ttyfast
 
 set scrolloff=3
 set noshowcmd
+" splits to happen below
+set splitbelow
 
 " set synmaxcol=200
 
@@ -39,8 +41,8 @@ set autochdir
 set number
 set norelativenumber
 
-" close vi compatibility model
-set nocompatible
+" close vi compatibility model --rm
+" set nocompatible
 
 " close heighlight current line
 set nocursorline
@@ -103,7 +105,7 @@ set noswapfile
 set nobackup
 
 " Persistenstent undo
-set undofile
+" set undofile
 set undodir=$HOME/.vim/undo
 
 set undolevels=1000
@@ -178,6 +180,7 @@ Plug 'honza/vim-snippets'
 " rely on ctags, use new ctags universal-ctags , https://github.com/universal-ctags/ctags
 " brew install --HEAD --with-jansson universal-ctags/universal-ctags/universal-ctags
 Plug 'liuchengxu/vista.vim'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
@@ -322,8 +325,8 @@ let g:UltiSnipsExpandTrigger='<c-e>'
 
 " fzf
 " fzf use rg search config
-" let g:fzf_layout = { 'down': '~70%' }
-let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8, 'yoffset': 0.5 } }
+let g:fzf_layout = { 'down': '~70%' }
+" let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8, 'yoffset': 0.5 } }
 command! -bang -nargs=* Rg
       \ call fzf#vim#grep(
       \   "rg --column --line-number --no-heading --color=always --smart-case "
@@ -340,8 +343,8 @@ command! -bang -nargs=? -complete=dir Files
 let g:vista#renderer#enable_icon = 0
 let g:vista_sidebar_width = 50
 
-" vim-gitgutter
-let g:gitgutter_terminal_reports_focus=0
+" vim-fugitive
+let g:fugitive_pty = 0
 
 " ---------------vim keyboard redefine-------------
 " redefine code fold key
