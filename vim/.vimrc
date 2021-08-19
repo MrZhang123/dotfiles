@@ -129,7 +129,7 @@ if has("gui_running")
 	set guioptions-=b
 	" set font
 	set macligatures
-	set guifont=Dank\ Mono:h18
+	set guifont=Dank\ Mono:h16
   " set guifont=OperatorMono-Book:h18
   " set guifont=Fira\ Code:h18
 	" set background opacity
@@ -152,7 +152,7 @@ Plug 'Valloric/YouCompleteMe'
 " Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript.jsx'] }
 Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline-themes'
 " Plug 'altercation/vim-colors-solarized'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
@@ -191,7 +191,7 @@ syntax enable " use code heighlight
 
 if has("gui_running")
   " colorscheme solarized
-  colorscheme desert
+  colorscheme default
 else
   colorscheme desert
   " colorscheme solarized
@@ -213,7 +213,12 @@ set background=dark
 " airline
 set laststatus=2
 " let g:airline_theme='powerlineish'
-" let g:airline_theme='raven'
+let g:airline_theme='monochrome' " term monochrome
+
+" only use tabline extensions
+let g:airline_extensions = ["tabline"]
+let g:airline_highlighting_cache = 1
+
 let g:airline#extensions#tabline#enabled = 1
 
 let g:airline#extensions#tabline#show_buffers = 0
@@ -225,6 +230,8 @@ let g:airline#extensions#tabline#show_splits = 0
 " formate buffer name
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#buffer_nr_show = 0
+
+
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -324,8 +331,10 @@ let g:UltiSnipsExpandTrigger='<c-e>'
 " let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 
 " fzf
-" fzf use rg search config
-let g:fzf_layout = { 'down': '~70%' }
+" fzf use rg search config, value: up down left right
+let g:fzf_layout = { 'up': '~40%' }
+" hidden by default, ctrl-/ to toggle
+let g:fzf_preview_window = ['down:40%:hidden', 'ctrl-P']
 " let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8, 'yoffset': 0.5 } }
 command! -bang -nargs=* Rg
       \ call fzf#vim#grep(
