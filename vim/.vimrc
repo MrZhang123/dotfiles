@@ -138,7 +138,7 @@ endif
 
 " set tabsize for different files
 if has("autocmd")
-  autocmd FileType jsx,javascript setlocal ts=2 sts=2 sw=2
+  autocmd FileType jsx,javascript,ts,typescript setlocal ts=2 sts=2 sw=2
   autocmd FileType go setlocal ts=4 sts=4 sw=4
   " react snippets
   " autocmd FileType jsx,javascript.jsx UltiSnipsAddFiletypes javascript-es6-react.snippets
@@ -150,12 +150,12 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'Valloric/YouCompleteMe'
 " Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
-Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript.jsx'] }
+Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript.jsx', 'typescriptreact'] }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Plug 'altercation/vim-colors-solarized'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
+Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'typescriptreact'] }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoUpdateBinaries' }
 " Plug 'prettier/vim-prettier'
@@ -179,7 +179,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " rely on ctags, use new ctags universal-ctags , https://github.com/universal-ctags/ctags
 " brew install --HEAD --with-jansson universal-ctags/universal-ctags/universal-ctags
-Plug 'liuchengxu/vista.vim'
+" Plug 'liuchengxu/vista.vim'
 Plug 'tpope/vim-fugitive'
 
 call plug#end()
@@ -213,7 +213,7 @@ set background=dark
 " airline
 set laststatus=2
 " let g:airline_theme='powerlineish'
-let g:airline_theme='monochrome' " term monochrome
+let g:airline_theme='term' " term monochrome
 
 " only use tabline extensions
 let g:airline_extensions = ["tabline"]
@@ -249,9 +249,9 @@ let g:ycm_warning_symbol = '👻'
 " Ctrl-z trigger reminder
 " let g:ycm_key_invoke_completion = '<c-z>'
 " automatic reminder
+" semantic completion to automatically trigger after typing two characters
 let g:ycm_semantic_triggers =  {
-  \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
-  \ 'cs,lua,javascript': ['re!\w{2}'],
+  \ 'c,cpp,python,java,go,javascript,typescript': ['re!\w{2}'],
   \ }
 set completeopt=menu,menuone
 let g:ycm_add_preview_to_completeopt = 0
@@ -263,17 +263,20 @@ highlight PMenuSel ctermfg=15 ctermbg=0 guifg=white guibg=black
 
 " emmet-vim
 " set file type that can sue emmet
-autocmd FileType html,css,jsx,javascript.jsx EmmetInstall
+autocmd FileType html,css,jsx,javascript.jsx,tsx,typescriptreact EmmetInstall
 " set trigger key
 let g:user_emmet_expandabbr_key='<C-o>'
 " let g:user_emmet_leader_key='<Ctrl>'
 
 let g:user_emmet_mode='a'
-let g:user_emmet_settings = {'javascript.jsx': {'extends': 'jsx'}}
+" tsx support
+let g:user_emmet_settings = {'javascript.jsx': {'extends': 'jsx'}, 'typescript': {'extends': 'jsx'}}
 " imap <expr> <tab> emmet#expandAbbrIntelligent('\<tab>')
 
 " vim-jsx
 let g:jsx_ext_required = 0
+" Use JSX syntax highlighting in TSX files
+autocmd BufRead,BufNewFile *.tsx setlocal syntax=javascript.jsx
 
 " scss-syntax
 " au FileType scss set iskeyword+=-
