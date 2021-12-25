@@ -45,13 +45,15 @@ set norelativenumber
 " set nocompatible
 
 " close heighlight current line
-set nocursorline
+" set nocursorline
+" set cursorline
 
 " close heighlight current column
 " set nocursorcolumn
+" set cursorcolumn
 
 " open ruler
-" set ruler
+set ruler
 
 " set tab size
 set tabstop=2
@@ -148,7 +150,8 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript.jsx', 'typescriptreact'] }
 Plug 'vim-airline/vim-airline'
@@ -169,6 +172,7 @@ Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 " Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'elzr/vim-json', { 'for': ['markdown', 'json'] }
+Plug 'solarnz/thrift.vim', { 'for': 'thrift' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 
@@ -231,35 +235,40 @@ let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#buffer_nr_show = 0
 
+" coc
 
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 
 " YouCompleteMe
-let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_key_list_select_completion = ['<c-n>', '<c-j>']
-let g:ycm_key_list_previous_completion = ['<c-p>', '<c-k>']
+" let g:ycm_autoclose_preview_window_after_completion=1
+" let g:ycm_key_list_select_completion = ['<c-n>', '<c-j>']
+" let g:ycm_key_list_previous_completion = ['<c-p>', '<c-k>']
 " disable diagnostics ui
 
 " ycm disable diagnostic
-let g:ycm_show_diagnostics_ui = 0
-let g:ycm_enable_diagnostic_signs = 0
-let g:ycm_enable_diagnostic_highlighting = 0
 
-let g:ycm_error_symbol = '💩'
-let g:ycm_warning_symbol = '👻'
+" let g:ycm_show_diagnostics_ui = 0
+" let g:ycm_enable_diagnostic_signs = 0
+" let g:ycm_enable_diagnostic_highlighting = 0
+
+" let g:ycm_error_symbol = '💩'
+" let g:ycm_warning_symbol = '👻'
+
 " Ctrl-z trigger reminder
 " let g:ycm_key_invoke_completion = '<c-z>'
 " automatic reminder
 " semantic completion to automatically trigger after typing two characters
-let g:ycm_semantic_triggers =  {
-  \ 'c,cpp,python,java,go,javascript,typescript': ['re!\w{2}'],
-  \ }
-set completeopt=menu,menuone
-let g:ycm_add_preview_to_completeopt = 0
+" let g:ycm_semantic_triggers =  {
+"   \ 'c,cpp,python,java,go,javascript,typescript': ['re!\w{2}'],
+"   \ }
+" set completeopt=menu,menuone
+" let g:ycm_add_preview_to_completeopt = 0
 
 " set vim pop color
-highlight PMenu ctermfg=55 ctermbg=15 guifg=purple4 guibg=white
+highlight PMenu ctermfg=55 ctermbg=15 guifg=green3 guibg=black
 
-highlight PMenuSel ctermfg=15 ctermbg=0 guifg=white guibg=black
+highlight PMenuSel ctermfg=15 ctermbg=0 guifg=white guibg=gray
 
 " emmet-vim
 " set file type that can sue emmet
