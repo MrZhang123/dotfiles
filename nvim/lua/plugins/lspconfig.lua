@@ -81,10 +81,10 @@ function toggle_virtual_text(show)
     })
 end
 
-vim.cmd('hi DiagnosticUnderlineError cterm=standout gui=standout guifg=red')
-vim.cmd('hi DiagnosticUnderlineWarn cterm=standout gui=standout guifg=yellow')
-vim.cmd('hi DiagnosticUnderlineInfo cterm=standout gui=standout guifg=green')
-vim.cmd('hi DiagnosticUnderlineHint cterm=standout gui=standout guifg=LightGrey')
+-- vim.cmd('hi DiagnosticUnderlineError cterm=standout gui=standout guifg=red')
+-- vim.cmd('hi DiagnosticUnderlineWarn cterm=standout gui=standout guifg=yellow')
+-- vim.cmd('hi DiagnosticUnderlineInfo cterm=standout gui=standout guifg=green')
+-- vim.cmd('hi DiagnosticUnderlineHint cterm=standout gui=standout guifg=LightGrey')
 
-set_keymap('n', '<leader>jj', ':lua toggle_virtual_text(true)<cr>')
-set_keymap('n', '<leader>jjj', ':lua toggle_virtual_text(false)<cr>')
+-- set_keymap('n', '<leader>jj', ':lua toggle_virtual_text(true)<cr>')
+-- set_keymap('n', '<leader>jjj', ':lua toggle_virtual_text(false)<cr>')

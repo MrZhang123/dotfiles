@@ -150,26 +150,15 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-" Plug 'Valloric/YouCompleteMe'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript.jsx', 'typescriptreact'] }
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-" Plug 'altercation/vim-colors-solarized'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'typescriptreact'] }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoUpdateBinaries' }
-" Plug 'prettier/vim-prettier'
-" Plug 'Chiel92/vim-autoformat'
-" Plug 'w0rp/ale'
-" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
-" Plug 'Yggdroot/indentLine'
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-" Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'elzr/vim-json', { 'for': ['markdown', 'json'] }
 Plug 'solarnz/thrift.vim', { 'for': 'thrift' }
@@ -195,80 +184,60 @@ syntax enable " use code heighlight
 
 if has("gui_running")
   " colorscheme solarized
-  colorscheme default
+  colorscheme desert
 else
   colorscheme desert
   " colorscheme solarized
 endif
 set background=dark
 
-" CtrlP
-" set wildignore+=*/tmp/*,*.so,*.swp,*.zip " MacOSX/Linux
-" let g:ctrlp_custom_ignore = { 'dir': 'build$\|node_modules$' }
-" Ignore files in .gitignore
-" let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-" use rg with ctrlp
-" if executable('rg')
-  " set grepprg=rg\ --color=never
-  " let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
-  " let g:ctrlp_use_caching = 0
-" endif
-
-" airline
-set laststatus=2
-" let g:airline_theme='powerlineish'
-let g:airline_theme='term' " term monochrome
-
-" only use tabline extensions
-let g:airline_extensions = ["tabline"]
-let g:airline_highlighting_cache = 1
-
-let g:airline#extensions#tabline#enabled = 1
-
-let g:airline#extensions#tabline#show_buffers = 0
-" let g:airline#extensions#tabline#show_tabs = 0
-let g:airline#extensions#tabline#show_tab_count = 0
-let g:airline#extensions#tabline#show_tab_type = 0
-let g:airline#extensions#tabline#show_splits = 0
-
-" formate buffer name
-let g:airline#extensions#tabline#formatter = 'unique_tail'
-let g:airline#extensions#tabline#buffer_nr_show = 0
-
 " coc
 
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 
-" YouCompleteMe
-" let g:ycm_autoclose_preview_window_after_completion=1
-" let g:ycm_key_list_select_completion = ['<c-n>', '<c-j>']
-" let g:ycm_key_list_previous_completion = ['<c-p>', '<c-k>']
-" disable diagnostics ui
+" vim-go
+let g:go_highlight_structs = 0
+let g:go_highlight_interfaces = 0
+let g:go_highlight_operators = 0
 
-" ycm disable diagnostic
-
-" let g:ycm_show_diagnostics_ui = 0
-" let g:ycm_enable_diagnostic_signs = 0
-" let g:ycm_enable_diagnostic_highlighting = 0
-
-" let g:ycm_error_symbol = '💩'
-" let g:ycm_warning_symbol = '👻'
-
-" Ctrl-z trigger reminder
-" let g:ycm_key_invoke_completion = '<c-z>'
-" automatic reminder
-" semantic completion to automatically trigger after typing two characters
-" let g:ycm_semantic_triggers =  {
-"   \ 'c,cpp,python,java,go,javascript,typescript': ['re!\w{2}'],
-"   \ }
-" set completeopt=menu,menuone
-" let g:ycm_add_preview_to_completeopt = 0
+let g:go_fmt_command = "goimports"
+let g:go_fmt_fail_silently = 1
 
 " set vim pop color
-highlight PMenu ctermfg=55 ctermbg=15 guifg=green3 guibg=black
+highlight PMenu ctermfg=34 ctermbg=232 guifg=green3 guibg=black
+highlight PMenuSel ctermfg=15 ctermbg=242 guifg=white guibg=gray
 
-highlight PMenuSel ctermfg=15 ctermbg=0 guifg=white guibg=gray
+highlight NormalColor guifg=Black guibg=Green3 ctermbg=46 ctermfg=0
+highlight InsertColor guifg=Black guibg=Yellow ctermbg=51 ctermfg=0
+highlight ReplaceColor guifg=Black guibg=maroon1 ctermbg=165 ctermfg=0
+highlight VisualColor guifg=Black guibg=Orange ctermbg=202 ctermfg=0
+
+" vim status line
+set laststatus=2
+
+set statusline=
+
+set statusline+=%#NormalColor#%{(mode()=='n')?'\ \ \NORMAL\ ':''}
+set statusline+=%#InsertColor#%{(mode()=='i')?'\ \ \INSERT\ ':''}
+set statusline+=%#ReplaceColor#%{(mode()=='R')?'\ \ \REPLACE\ ':''}
+set statusline+=%#VisualColor#%{(mode()=='v')?'\ \ \VISUAL\ ':''}
+
+set statusline+=%#PmenuSel#
+set statusline+=%#LineNr#
+
+set statusline+=%F%r%h%w%m
+set statusline+=%=
+set statusline+=%#CursorColumn#
+set statusline+=%#PmenuSel#
+set statusline+=%#LineNr#
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\ [%{&fileformat}\]
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
+set statusline+=\
+
 
 " emmet-vim
 " set file type that can sue emmet
@@ -366,6 +335,8 @@ let g:vista_sidebar_width = 50
 
 " vim-fugitive
 let g:fugitive_pty = 0
+
+
 
 " ---------------vim keyboard redefine-------------
 " redefine code fold key

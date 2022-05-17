@@ -9,8 +9,8 @@ return require('packer').startup({
         use('nvim-lua/popup.nvim')
 
         -- view 
-        use {'vim-airline/vim-airline'}
-        use {'vim-airline/vim-airline-themes'}
+        -- use {'vim-airline/vim-airline'}
+        -- use {'vim-airline/vim-airline-themes'}
         use('wincent/ferret') -- find and replace
         use('editorconfig/editorconfig-vim') -- editorconfig support
         use('tpope/vim-fugitive') -- git signs
@@ -26,9 +26,6 @@ return require('packer').startup({
             -- requires = {
             --   'kyazdani42/nvim-web-devicons', -- optional, for file icon
             -- },
-            config = function()
-                require'nvim-tree'.setup {}
-            end
         }
 
         -- edit
@@ -48,26 +45,21 @@ return require('packer').startup({
         --   branch = 'release/0.x',
         -- })
         use('AndrewRadev/splitjoin.vim') -- split and join in vim
-        use({
+        use{
             'steelsojka/pears.nvim', -- auto symbol pairs
             config = function()
                 require('pears').setup()
             end
-        })
+        }
 
         -- language
-        use({
+        use{
           'nvim-treesitter/nvim-treesitter', -- treesitter
           run = ':TSUpdate',
-        })
+        }
         use('neovim/nvim-lspconfig') -- lsp client config
-        use({
-            'hrsh7th/vim-vsnip',
-            requires = {
-                'rafamadriz/friendly-snippets'
-            }
-        }) -- snippets
-        use({
+        use('hrsh7th/vim-vsnip') -- snippets
+        use{
             'hrsh7th/nvim-cmp', -- completion
             requires = {
                 'hrsh7th/cmp-nvim-lsp', -- cmp lsp
@@ -76,8 +68,11 @@ return require('packer').startup({
                 'hrsh7th/cmp-path', -- cmp path
                 'hrsh7th/cmp-vsnip', -- cmp vsnip integration
             },
-        })
+        }
         use('solarnz/thrift.vim') -- thrift highlight
+        use{'ray-x/go.nvim'} -- golang support
+        -- use('crispgm/nvim-go')
+
 
         use('mattn/emmet-vim') -- html/css snippets
 

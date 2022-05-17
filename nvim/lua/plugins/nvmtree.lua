@@ -4,7 +4,7 @@ set_keymap('n', '<c-n>', '<cmd>NvimTreeToggle<cr>')
 set_keymap('n', '<leader>r', '<cmd>NvimTreeRefresh<cr>')
 
 vim.g.nvim_tree_icon_padding = ''
-vim.g.nvim_tree_disable_window_picker = 1
+-- vim.g.nvim_tree_disable_window_picker = 1
 vim.g.nvim_tree_show_icons = {
     git = 0,
     folders = 1,
@@ -44,7 +44,7 @@ require'nvim-tree'.setup {
     hijack_netrw = true,
     open_on_setup = false,
     ignore_ft_on_setup = {},
-    auto_close = false,
+    -- auto_close = false,
     open_on_tab = false,
     hijack_cursor = false,
     update_cwd = false,
