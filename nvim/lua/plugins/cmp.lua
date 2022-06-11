@@ -28,3 +28,4 @@ cmp.setup({
         { name = 'path' },
     },
 })
+vim.lsp.set_log_level("debug")

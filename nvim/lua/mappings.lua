@@ -11,8 +11,8 @@ set_keymap('n', '<C-l>', '<C-i>')
 set_keymap('n', '<C-h>', '<C-o>')
 
 -- code fold
-set_keymap('n', '<S-n>', 'zc')
-set_keymap('n', '<S-m>', 'zo')
+set_keymap('n', '<leader>n', 'zc')
+set_keymap('n', '<leader>m', 'zo')
 
 -- code move
 set_keymap('n', '<S-j>', ':m .+1<CR>==')

@@ -1,8 +1,13 @@
-vim.g.vsnip_snippet_dirs = {'/Users/zhangyi/.config/nvim/snippets', '/Users/zhangyi/.config/nvim/snippets/javascript'}
+vim.cmd [[
+    let g:vsnip_filetypes = {}
+    let g:vsnip_filetypes.javascriptreact = ['javascript', 'typescript']
+    let g:vsnip_filetypes.typescriptreact = ['javascript', 'typescript']
+    let g:vsnip_filetypes.typescript = ['javascript', 'typescript']
+]]
 
 -- Expand
 vim.api.nvim_command(
-    [[imap <expr> <C-e> vsnip#expandable() ? '<Plug>(vsnip-expand-or-jump)' : '<C-e>']]
+    [[imap <expr> <C-e> vsnip#expandable() ? '<Plug>(vsnip-expand)' : '<C-e>']]
 )
 vim.api.nvim_command(
     [[imap <expr> <C-l> vsnip#available() ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>']]

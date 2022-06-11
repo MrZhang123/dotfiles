@@ -13,6 +13,7 @@ opt.backup = false -- no .bak
 opt.swapfile = false -- no .swap
 opt.undofile = true -- use undo file
 opt.updatetime = 300 -- time (in ms) to write to swap file
+opt.history = 200 -- save vim commond list max
 
 -- code fold
 vim.wo.foldmethod = 'expr'
@@ -24,7 +25,7 @@ vim.wo.foldlevel = 99
 opt.scrolloff = 3 -- 保持在光标上下最少行数
 -- opt.showcmd = false
 opt.number = true
--- opt.relativenumber = true 
+opt.relativenumber = true 
 
 opt.expandtab = true -- automatic change tab to space when enter <Tab>
 opt.tabstop = 2 -- set tab size
@@ -66,7 +67,8 @@ opt.wildmode = {'longest', 'full'}
 
 -- options: default,desert,evening
 cmd('colorscheme default')
-opt.background = 'dark'
+-- cmd('colorscheme tokyonight')
+-- opt.background = 'dark'
 
 cmd('highlight PMenu ctermfg=34 ctermbg=232 guifg=green3 guibg=black')
 cmd('highlight PMenuSel ctermfg=15 ctermbg=242 guifg=white guibg=gray')

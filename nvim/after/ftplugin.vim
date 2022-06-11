@@ -1,16 +1,3 @@
-"  let g:clipboard = {
-"      \ 'name': 'pbcopy',
-"      \ 'copy': {
-"      \    '+': 'pbcopy',
-"      \    '*': 'pbcopy',
-"      \  },
-"      \ 'paste': {
-"      \    '+': 'pbpaste',
-"      \    '*': 'pbpaste',
-"      \ },
-"      \ 'cache_enabled': 0,
-"      \ } 
-
 augroup filetype_options
   autocmd!
   autocmd Filetype vim  setlocal ts=2 sts=2 sw=2 expandtab
@@ -66,8 +53,3 @@ set statusline+=\
 "  " formate buffer name
 "  let g:airline#extensions#tabline#formatter = 'unique_tail'
 "  let g:airline#extensions#tabline#buffer_nr_show = 0
-
-" vim-vsnip
-let g:vsnip_filetypes = {}
-let g:vsnip_filetypes.javascriptreact = ['javascript']
-let g:vsnip_filetypes.typescriptreact = ['typescript']

@@ -6,7 +6,7 @@
 local nvim_lsp = require('lspconfig')
 local set_keymap = require('../common').set_keymap
 
-local servers = {'tsserver', 'eslint', 'html', 'jsonls', 'gopls'}
+local servers = {'tsserver', 'eslint', 'html', 'jsonls', 'gopls', 'cssls'}
 
 local on_attach = function(client, bufnr)
     local function buf_set_keymap(...)
@@ -62,9 +62,9 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-require'lspconfig'.cssls.setup {
-    capabilities = capabilities
-}
+-- require'lspconfig'.cssls.setup {
+--     capabilities = capabilities
+-- }
 
 -- neovim diagnostic config
 vim.diagnostic.config({
@@ -73,13 +73,17 @@ vim.diagnostic.config({
     signs = false
 })
 
-function toggle_virtual_text(show)
-    vim.diagnostic.config({
-        underline = true,
-        virtual_text = show,
-        signs = false
-    })
-end
+-- Show line diagnostics automatically in hover window
+-- vim.o.updatetime = 250
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+
+-- function toggle_virtual_text(show)
+--     vim.diagnostic.config({
+--         underline = true,
+--         virtual_text = show,
+--         signs = false
+--     })
+-- end
 
 -- vim.cmd('hi DiagnosticUnderlineError cterm=standout gui=standout guifg=red')
 -- vim.cmd('hi DiagnosticUnderlineWarn cterm=standout gui=standout guifg=yellow')

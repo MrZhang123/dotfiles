@@ -6,7 +6,7 @@ git clone https://github.com/wbthomason/packer.nvim \
 
 # conf
 mkdir -p ~/.config/nvim
-cp -r ./nvim/init.lua ./nvim/lua ./nvim/after ~/.config/nvim/
+cp -r ./init.lua ./lua ./after ~/.config/nvim/
 
 # Language servers
 # yarn global add bash-language-server

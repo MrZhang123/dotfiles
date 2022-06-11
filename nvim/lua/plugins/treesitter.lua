@@ -1,8 +1,9 @@
 require('nvim-treesitter.configs').setup({
     highlight = {
-        enable = true
+        enable = true,
+        additional_vim_regex_highlighting = false,
     },
-    ensure_installed = {"html", "css", "lua", "javascript", "typescript", "tsx", "go", "bash", "comment"},
+    ensure_installed = {"html", "css", "lua", "javascript", "typescript", "tsx", "go", "bash", "comment", "markdown"},
     indent = {
         enable = true
     },
