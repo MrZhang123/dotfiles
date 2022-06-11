@@ -12,10 +12,13 @@ cp -r ./init.lua ./lua ./after ~/.config/nvim/
 # yarn global add bash-language-server
 # css,eslint,html,json server
 yarn global add vscode-langservers-extracted
-# golang
-go get golang.org/x/tools/gopls@latest
+
 # ts,js
 yarn global add typescript typescript-language-server
+
+# golang
+go install golang.org/x/tools/gopls@latest
+
 # vim
 # yarn global add vim-language-server
 
