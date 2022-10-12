@@ -28,4 +28,7 @@ cmp.setup({
         { name = 'path' },
     },
 })
-vim.lsp.set_log_level("debug")
+
+-- Levels by name: "TRACE", "DEBUG", "INFO", "WARN", "ERROR", "OFF"
+-- Level numbers begin with "TRACE" at 0
+-- vim.lsp.set_log_level("off")

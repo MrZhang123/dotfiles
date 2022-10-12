@@ -1,52 +1,53 @@
--- require'lspconfig'.tsserver.setup {}
--- require'lspconfig'.cssls.setup {}
--- require'lspconfig'.eslint.setup {}
--- require'lspconfig'.html.setup {}
--- require'lspconfig'.jsonls.setup {}
 local nvim_lsp = require('lspconfig')
 local set_keymap = require('../common').set_keymap
 
-local servers = {'tsserver', 'eslint', 'html', 'jsonls', 'gopls', 'cssls'}
+local opts = {
+    noremap = true,
+    silent = true
+}
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts)
 
+-- Use an on_attach function to only map the following keys
+-- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-    local function buf_set_keymap(...)
-        vim.api.nvim_buf_set_keymap(bufnr, ...)
-    end
-    -- local function buf_set_option(...)
-    --     vim.api.nvim_buf_set_option(bufnr, ...)
-    -- end
-
     -- Enable completion triggered by <c-x><c-o>
-    -- buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+    --   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
     -- Mappings.
-    local opts = {
+    -- See `:help vim.lsp.*` for documentation on any of the below functions
+    local bufopts = {
         noremap = true,
-        silent = true
+        silent = true,
+        buffer = bufnr
     }
 
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
-    buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-    buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-    buf_set_keymap('n', '<leader>h', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-    buf_set_keymap('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
-    buf_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-    buf_set_keymap('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+    vim.keymap.set('n', '<leader>h', vim.lsp.buf.hover, bufopts)
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+    vim.keymap.set('n', '<leader>f', function()
+        vim.lsp.buf.format {
+            async = true
+        }
+    end, bufopts)
 
-    buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-    -- buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-    buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-    buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-    buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-    buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-    buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-    buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-    buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-    buf_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-    buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-
+    --   default config
+    --   vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+    vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
+    vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
+    vim.keymap.set('n', '<space>wl', function()
+        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    end, bufopts)
+    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
+    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
+    vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
+    vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
 end
 
+local servers = {'tsserver', 'eslint', 'html', 'jsonls', 'gopls', 'cssls'}
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 for _, lsp in ipairs(servers) do
@@ -62,10 +63,6 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
--- require'lspconfig'.cssls.setup {
---     capabilities = capabilities
--- }
-
 -- neovim diagnostic config
 vim.diagnostic.config({
     underline = true,
@@ -73,22 +70,4 @@ vim.diagnostic.config({
     signs = false
 })
 
--- Show line diagnostics automatically in hover window
--- vim.o.updatetime = 250
 vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
-
--- function toggle_virtual_text(show)
---     vim.diagnostic.config({
---         underline = true,
---         virtual_text = show,
---         signs = false
---     })
--- end
-
--- vim.cmd('hi DiagnosticUnderlineError cterm=standout gui=standout guifg=red')
--- vim.cmd('hi DiagnosticUnderlineWarn cterm=standout gui=standout guifg=yellow')
--- vim.cmd('hi DiagnosticUnderlineInfo cterm=standout gui=standout guifg=green')
--- vim.cmd('hi DiagnosticUnderlineHint cterm=standout gui=standout guifg=LightGrey')
-
--- set_keymap('n', '<leader>jj', ':lua toggle_virtual_text(true)<cr>')
--- set_keymap('n', '<leader>jjj', ':lua toggle_virtual_text(false)<cr>')

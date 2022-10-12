@@ -78,6 +78,10 @@ cmd('hi InsertColor guifg=Black guibg=Yellow ctermbg=51 ctermfg=0')
 cmd('hi ReplaceColor guifg=Black guibg=maroon1 ctermbg=165 ctermfg=0')
 cmd('hi VisualColor guifg=Black guibg=Orange ctermbg=202 ctermfg=0')
 
+-- neovim 0.8+
+vim.o.ch = 0
+-- vim.o.ls = 0
+
 if has('termguicolors') then
     cmd('let &t_8f = "\\<Esc>[38;2;%lu;%lu;%lum"')
     cmd('let &t_8b = "\\<Esc>[48;2;%lu;%lu;%lum"')

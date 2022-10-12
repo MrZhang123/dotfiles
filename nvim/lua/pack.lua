@@ -80,6 +80,7 @@ return require('packer').startup({
         use('solarnz/thrift.vim') -- thrift highlight
         use('ray-x/go.nvim') -- golang support
         use('mattn/emmet-vim') -- html/css 
+        -- use('preservim/vim-markdown')
 
     end,
     config = {
