@@ -31,3 +31,7 @@ exmap tabnext obcommand cycle-through-panes:cycle-through-panes
 nmap <S-h> :tabnext
 exmap tabprev obcommand cycle-through-panes:cycle-through-panes-reverse
 nmap <S-l> :tabprev
+
+" split window
+exmap split obcommand workspace:split-vertical
+nmap <C-w>v :split
