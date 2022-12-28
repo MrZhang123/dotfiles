@@ -25,7 +25,7 @@ vim.wo.foldlevel = 99
 opt.scrolloff = 3 -- 保持在光标上下最少行数
 -- opt.showcmd = false
 opt.number = true
-opt.relativenumber = true 
+opt.relativenumber = true
 
 opt.expandtab = true -- automatic change tab to space when enter <Tab>
 opt.tabstop = 2 -- set tab size
@@ -79,7 +79,7 @@ cmd('hi ReplaceColor guifg=Black guibg=maroon1 ctermbg=165 ctermfg=0')
 cmd('hi VisualColor guifg=Black guibg=Orange ctermbg=202 ctermfg=0')
 
 -- neovim 0.8+
-vim.o.ch = 0
+-- vim.o.ch = 0
 -- vim.o.ls = 0
 
 if has('termguicolors') then
