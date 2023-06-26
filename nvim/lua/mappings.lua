@@ -3,7 +3,6 @@ local nvim_set_keymap = require('common').nvim_set_keymap
 
 -- command
 
--- " Have j and k navigate visual lines rather than logical ones
 set_keymap('n', 'j', 'gj')
 set_keymap('n', 'k', 'gk')
 

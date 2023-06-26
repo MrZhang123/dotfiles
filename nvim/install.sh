@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # plugin manager
-git clone https://github.com/wbthomason/packer.nvim \
-  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+# git clone https://github.com/wbthomason/packer.nvim \
+#   ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 # conf
 mkdir -p ~/.config/nvim
@@ -13,7 +13,7 @@ cp -r ./init.lua ./lua ./after ~/.config/nvim/
 # css,eslint,html,json server
 yarn global add vscode-langservers-extracted
 # golang
-go install golang.org/x/tools/gopls@latest
+go get golang.org/x/tools/gopls@latest
 # ts,js
 yarn global add typescript typescript-language-server
 # vim
@@ -32,4 +32,4 @@ yarn global add typescript typescript-language-server
 # cd ../..
 # ./3rd/luamake/luamake rebuild
 
-echo "Run `nvim +PackerInstall` to finish setup"
+# echo "Run `nvim +PackerInstall` to finish setup"

@@ -25,7 +25,7 @@ vim.wo.foldlevel = 99
 opt.scrolloff = 3 -- 保持在光标上下最少行数
 -- opt.showcmd = false
 opt.number = true
-opt.relativenumber = true
+opt.relativenumber = true 
 
 opt.expandtab = true -- automatic change tab to space when enter <Tab>
 opt.tabstop = 2 -- set tab size
@@ -55,6 +55,10 @@ opt.smartcase = true -- if search have capital , use case for search
 
 opt.wildmenu = true -- wildmenu, auto complete for commands
 opt.wildmode = {'longest', 'full'}
+
+-- disable netrw at the very start of your init.lua (strongly advised)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 -- opt.showmatch = true -- show bracket match
 
 -- if not has('gui_running') then
