@@ -1,3 +1,10 @@
+local installed = {'tsserver', 'eslint', 'html', 'jsonls', 'gopls', 'cssls'}
+
+require("mason").setup()
+require("mason-lspconfig").setup({
+    ensure_installed = installed
+})
+
 local nvim_lsp = require('lspconfig')
 local set_keymap = require('../common').set_keymap
 
@@ -47,7 +54,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
 end
 
-local servers = {'tsserver', 'eslint', 'html', 'jsonls', 'gopls', 'cssls'}
+local servers = installed
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 for _, lsp in ipairs(servers) do

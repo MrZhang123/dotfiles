@@ -46,6 +46,13 @@ return {{
     end
 }, -- language	
 {
+    "williamboman/mason.nvim",
+    lazy = false,
+    build = ":MasonUpdate" -- :MasonUpdate updates registry contents
+}, {
+    "williamboman/mason-lspconfig.nvim",
+    lazy = false
+}, {
     "neovim/nvim-lspconfig", -- lsp client config
     lazy = false
 }, {
@@ -68,5 +75,5 @@ return {{
     lazy = true
 }, {
     "mattn/emmet-vim",
-    lazy = true
+    lazy = false
 }}
