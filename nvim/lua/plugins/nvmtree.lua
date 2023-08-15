@@ -22,13 +22,7 @@ return {{
             preserve_window_proportions = false,
             number = false,
             relativenumber = false,
-            signcolumn = "yes",
-            mappings = {
-                custom_only = false,
-                list = {
-                    -- user mappings go here
-                }
-            }
+            signcolumn = "yes"
         },
         renderer = {
             add_trailing = false,
