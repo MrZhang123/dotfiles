@@ -1,4 +1,4 @@
-local installed = {'tsserver', 'eslint', 'html', 'jsonls', 'gopls', 'cssls'}
+local installed = {'tsserver', 'eslint', 'html', 'jsonls', 'gopls', 'cssls', 'cssmodules_ls'}
 
 require("mason").setup()
 require("mason-lspconfig").setup({
