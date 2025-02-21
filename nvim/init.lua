@@ -1,13 +1,20 @@
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 local try_require = require('common').try_require
 
-try_require('options')
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system(
+        {"git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", -- latest stable release
+         lazypath})
+end
 
-require("plugins_config.lazy")
+vim.opt.rtp:prepend(lazypath)
 
 -- options
+try_require('options')
 
 -- packages
 -- try_require('pack')
+require("lazy").setup("plugins")
 
 require('impatient').enable_profile()
 
@@ -29,4 +36,3 @@ try_require('plugins_config.gonvim')
 -- try_require('plugins.prettier')
 -- try_require('plugins.rust')
 -- try_require('plugins.vimwiki')
-

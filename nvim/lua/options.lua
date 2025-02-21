@@ -25,7 +25,7 @@ vim.wo.foldlevel = 99
 opt.scrolloff = 3 -- 保持在光标上下最少行数
 -- opt.showcmd = false
 opt.number = true
-opt.relativenumber = true 
+opt.relativenumber = true
 
 opt.expandtab = true -- automatic change tab to space when enter <Tab>
 opt.tabstop = 2 -- set tab size
