@@ -74,6 +74,13 @@ cmd('colorscheme default')
 -- cmd('colorscheme tokyonight')
 -- opt.background = 'dark'
 
+-- 添加透明背景设置
+cmd('highlight Normal guibg=NONE ctermbg=NONE')
+cmd('highlight NonText guibg=NONE ctermbg=NONE')
+cmd('highlight LineNr guibg=NONE ctermbg=NONE')
+cmd('highlight Folded guibg=NONE ctermbg=NONE')
+cmd('highlight EndOfBuffer guibg=NONE ctermbg=NONE')
+
 cmd('highlight PMenu ctermfg=34 ctermbg=232 guifg=green3 guibg=black')
 cmd('highlight PMenuSel ctermfg=15 ctermbg=242 guifg=white guibg=gray')
 
