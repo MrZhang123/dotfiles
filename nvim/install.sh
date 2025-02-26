@@ -8,6 +8,10 @@
 mkdir -p ~/.config/nvim
 cp -r ./init.lua ./lua ./after ~/.config/nvim/
 
+# lazy.nvim
+
+git clone https://github.com/folke/lazy.nvim.git ~/.local/share/nvim/lazy/
+
 # Language servers
 # yarn global add bash-language-server
 # css,eslint,html,json server
