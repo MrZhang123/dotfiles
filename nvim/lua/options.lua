@@ -70,7 +70,7 @@ vim.g.loaded_netrwPlugin = 1
 -- vim.cmd("echon 'gui run'")
 
 -- options: default,desert,evening
-cmd('colorscheme default')
+cmd('colorscheme evening')
 -- cmd('colorscheme tokyonight')
 -- opt.background = 'dark'
 
