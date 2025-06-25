@@ -69,21 +69,46 @@ vim.g.loaded_netrwPlugin = 1
 -- end
 -- vim.cmd("echon 'gui run'")
 
--- options: default,desert,evening
+-- 启用真彩色支持
+opt.termguicolors = true
+
+-- 设置颜色主题
 cmd('colorscheme evening')
 -- cmd('colorscheme tokyonight')
 -- opt.background = 'dark'
 
--- 添加透明背景设置
-cmd('highlight Normal guibg=NONE ctermbg=NONE')
-cmd('highlight NonText guibg=NONE ctermbg=NONE')
-cmd('highlight LineNr guibg=NONE ctermbg=NONE')
-cmd('highlight Folded guibg=NONE ctermbg=NONE')
-cmd('highlight EndOfBuffer guibg=NONE ctermbg=NONE')
+-- 设置透明背景 - 需要在 colorscheme 之后设置以覆盖主题的背景色
+local function set_transparent_bg()
+    -- 基本透明设置
+    cmd('highlight Normal guibg=NONE ctermbg=NONE')
+    cmd('highlight NonText guibg=NONE ctermbg=NONE')
+    cmd('highlight LineNr guibg=NONE ctermbg=NONE')
+    cmd('highlight CursorLineNr guibg=NONE ctermbg=NONE')
+    cmd('highlight Folded guibg=NONE ctermbg=NONE')
+    cmd('highlight EndOfBuffer guibg=NONE ctermbg=NONE')
+    cmd('highlight SignColumn guibg=NONE ctermbg=NONE')
+    cmd('highlight VertSplit guibg=NONE ctermbg=NONE')
+    cmd('highlight StatusLine guibg=NONE ctermbg=NONE')
+    cmd('highlight StatusLineNC guibg=NONE ctermbg=NONE')
+    cmd('highlight TabLine guibg=NONE ctermbg=NONE')
+    cmd('highlight TabLineFill guibg=NONE ctermbg=NONE')
+    cmd('highlight TabLineSel guibg=NONE ctermbg=NONE')
 
-cmd('highlight PMenu ctermfg=34 ctermbg=232 guifg=green3 guibg=black')
-cmd('highlight PMenuSel ctermfg=15 ctermbg=242 guifg=white guibg=gray')
+    -- 弹出菜单透明
+    cmd('highlight PMenu ctermfg=34 ctermbg=NONE guifg=green3 guibg=NONE')
+    cmd('highlight PMenuSel ctermfg=15 ctermbg=238 guifg=white guibg=#444444')
+end
 
+-- 立即设置一次
+set_transparent_bg()
+
+-- 使用 autocmd 确保在主题改变后重新应用透明设置
+vim.api.nvim_create_autocmd("ColorScheme", {
+    pattern = "*",
+    callback = set_transparent_bg,
+})
+
+-- 保留你的自定义模式颜色（如果需要的话）
 cmd('hi NormalColor guifg=Black guibg=Green3 ctermbg=46 ctermfg=0')
 cmd('hi InsertColor guifg=Black guibg=Yellow ctermbg=51 ctermfg=0')
 cmd('hi ReplaceColor guifg=Black guibg=maroon1 ctermbg=165 ctermfg=0')
@@ -92,9 +117,3 @@ cmd('hi VisualColor guifg=Black guibg=Orange ctermbg=202 ctermfg=0')
 -- neovim 0.8+
 -- vim.o.ch = 0
 -- vim.o.ls = 0
-
-if has('termguicolors') then
-    cmd('let &t_8f = "\\<Esc>[38;2;%lu;%lu;%lum"')
-    cmd('let &t_8b = "\\<Esc>[48;2;%lu;%lu;%lum"')
-    opt.termguicolors = true
-end
