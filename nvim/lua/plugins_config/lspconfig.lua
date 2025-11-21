@@ -1,13 +1,16 @@
+-- 要安装/启用的 LSP 列表
 local installed = {'ts_ls', 'eslint', 'html', 'jsonls', 'gopls', 'cssls', 'cssmodules_ls'}
 
+-- mason & mason-lspconfig 配置
 require("mason").setup()
 require("mason-lspconfig").setup({
     ensure_installed = installed
 })
 
-local nvim_lsp = require('lspconfig')
+-- 这个如果其他地方用得上就保留，用不上可以删
 local set_keymap = require('../common').set_keymap
 
+-- 全局诊断快捷键
 local opts = {
     noremap = true,
     silent = true
@@ -17,14 +20,8 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts)
 
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
+-- LSP 附着后的 buffer 级快捷键
 local on_attach = function(client, bufnr)
-    -- Enable completion triggered by <c-x><c-o>
-    --   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-    -- Mappings.
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
     local bufopts = {
         noremap = true,
         silent = true,
@@ -41,8 +38,6 @@ local on_attach = function(client, bufnr)
         }
     end, bufopts)
 
-    --   default config
-    --   vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
     vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
     vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
     vim.keymap.set('n', '<space>wl', function()
@@ -54,21 +49,22 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
 end
 
-local servers = installed
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-for _, lsp in ipairs(servers) do
-    nvim_lsp[lsp].setup {
+-- capabilities：开启 snippet 支持（尤其给 css/html/json 用）
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+-- 使用 Neovim 0.11 的新接口配置并启用各个 LSP
+for _, lsp in ipairs(installed) do
+    vim.lsp.config(lsp, {
         on_attach = on_attach,
+        capabilities = capabilities,
         flags = {
             debounce_text_changes = 150
         }
-    }
+    })
+    -- 真正启用这个 server
+    vim.lsp.enable(lsp)
 end
-
--- css completion
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- neovim diagnostic config
 vim.diagnostic.config({
@@ -77,4 +73,5 @@ vim.diagnostic.config({
     signs = false
 })
 
+-- 悬停自动弹出诊断
 vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
