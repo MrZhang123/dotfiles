@@ -1,0 +1,50 @@
+# Ghostty configuration
+# Ported from Alacritty config
+
+# Font
+font-family = Monaco
+font-style = Regular
+font-size = 14
+font-thicken = true
+
+# Window
+background-opacity = 0.5
+
+# Cursor
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
+
+# Behavior
+confirm-close-surface = false
+
+# 修复 Ctrl+J 被输入法拦截的问题
+keybind = ctrl+j=text:\x0a
+
+# 内置分屏快捷键
+keybind = super+d=new_split:right
+keybind = super+shift+d=new_split:down
+
+# Colors - XTerm defaults
+background = #000000
+foreground = #ffffff
+
+# Normal colors
+palette = 0=#000000
+palette = 1=#cd0000
+palette = 2=#00cd00
+palette = 3=#cdcd00
+palette = 4=#0000ee
+palette = 5=#cd00cd
+palette = 6=#00cdcd
+palette = 7=#e5e5e5
+
+# Bright colors
+palette = 8=#7f7f7f
+palette = 9=#ff0000
+palette = 10=#00ff00
+palette = 11=#ffff00
+palette = 12=#5c5cff
+palette = 13=#ff00ff
+palette = 14=#00ffff
+palette = 15=#ffffff
