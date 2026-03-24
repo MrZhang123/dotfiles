@@ -53,3 +53,6 @@ fastlane/screenshots
 
 # PHP Middleware
 api/config/scm_config.php
+
+# log
+log/
