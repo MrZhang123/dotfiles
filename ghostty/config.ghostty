@@ -3,6 +3,7 @@
 
 # Font
 font-family = Monaco
+font-family = PingFang SC
 font-style = Regular
 font-size = 14
 font-thicken = true
