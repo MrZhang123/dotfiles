@@ -85,11 +85,13 @@ local function set_transparent_bg()
     cmd('highlight EndOfBuffer guibg=NONE ctermbg=NONE')
     cmd('highlight SignColumn guibg=NONE ctermbg=NONE')
     cmd('highlight VertSplit guibg=NONE ctermbg=NONE')
-    cmd('highlight StatusLine guibg=NONE ctermbg=NONE')
-    cmd('highlight StatusLineNC guibg=NONE ctermbg=NONE')
+    cmd('highlight StatusLine guifg=#d8dee9 guibg=NONE ctermfg=15 ctermbg=NONE')
+    cmd('highlight StatusLineNC guifg=#6c7086 guibg=NONE ctermfg=8 ctermbg=NONE')
     cmd('highlight TabLine guibg=NONE ctermbg=NONE')
     cmd('highlight TabLineFill guibg=NONE ctermbg=NONE')
     cmd('highlight TabLineSel guibg=NONE ctermbg=NONE')
+    cmd('highlight StatusPath guifg=#eceff4 guibg=NONE ctermfg=15 ctermbg=NONE')
+    cmd('highlight StatusInfo guifg=#f9e2af guibg=NONE ctermfg=11 ctermbg=NONE')
 
     -- 弹出菜单透明
     cmd('highlight PMenu ctermfg=34 ctermbg=NONE guifg=green3 guibg=NONE')
@@ -117,9 +119,9 @@ opt.statusline = table.concat({
     "%#InsertColor#%{(mode()=='i')?' INSERT ':''}",
     "%#ReplaceColor#%{(mode()=='R')?' REPLACE ':''}",
     "%#VisualColor#%{(mode()=='v')?' VISUAL ':''}",
-    "%#StatusLine# %<%F%r%h%w%m",
+    "%#StatusPath# %<%F%r%h%w%m",
     "%=",
-    "%#StatusLine# %y %{&fileencoding?&fileencoding:&encoding} [%{&fileformat}] %p%% %l:%c ",
+    "%#StatusInfo# %y %{&fileencoding?&fileencoding:&encoding} [%{&fileformat}] %p%% %l:%c ",
 })
 
 -- neovim 0.8+
