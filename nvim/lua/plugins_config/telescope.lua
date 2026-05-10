@@ -33,13 +33,12 @@ set_keymap('n', '<leader>fm', '<cmd>Telescope heading<cr>')
 
 -- Change to current file's directory
 set_keymap("n", "<leader>.", ":exec 'cd' . expand('%:p:h')<CR>", {
-    noremap = true,
+    remap = false,
     silent = true
 })
 
 -- Change directory to git root
 vim.keymap.set("n", "<leader>cd", cd_to_git_root, {
-    noremap = true,
     silent = false,
     desc = "Change directory to git root"
 })

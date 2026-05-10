@@ -1,39 +1,6 @@
 return {{
     "numToStr/Comment.nvim",
     lazy = false,
-    -- keys = {{
-    --     '<leader><Space>',
-    --     function()
-    --         require("Comment.api").toggle.linewise.current()
-    --     end,
-    --     silent = true,
-    --     noremap = true,
-    --     mode = 'n'
-    -- }, {
-    --     '<leader>c<Space>',
-    --     function()
-    --         require("Comment.api").toggle.blockwise.current()
-    --     end,
-    --     silent = true,
-    --     noremap = true,
-    --     mode = 'n'
-    -- }, {
-    --     '<leader><Space>',
-    --     function()
-    --         require("Comment.api").toggle.linewise(vim.fn.visualmode())
-    --     end,
-    --     silent = true,
-    --     noremap = true,
-    --     mode = 'v'
-    -- }, {
-    --     '<leader>c<Space>',
-    --     function()
-    --         require("Comment.api").toggle.blockwise(vim.fn.visualmode())
-    --     end,
-    --     silent = true,
-    --     noremap = true,
-    --     mode = 'v'
-    -- }},
     opts = {
         ---LHS of toggle mappings in NORMAL mode
         toggler = {
@@ -59,7 +26,7 @@ return {{
             eol = 'gcA'
         }
     },
-    config = function()
-        require("Comment").setup()
+    config = function(_, opts)
+        require("Comment").setup(opts)
     end
 }}

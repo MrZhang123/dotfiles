@@ -12,9 +12,6 @@ require('toggleterm').setup({
 })
 
 function _G.set_terminal_keymaps()
-    local opts = {
-        noremap = true
-    }
     buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]])
     -- buf_set_keymap(0, 't', 'jk', [[<C-\><C-n>]])
     buf_set_keymap(0, 't', '<C-h>', [[<C-\><C-n><C-W>h]])
@@ -23,6 +20,10 @@ function _G.set_terminal_keymaps()
     buf_set_keymap(0, 't', '<C-l>', [[<C-\><C-n><C-W>l]])
 end
 
-vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+vim.api.nvim_create_autocmd("TermOpen", {
+    group = vim.api.nvim_create_augroup("ToggleTermKeymaps", {clear = true}),
+    pattern = "term://*",
+    callback = set_terminal_keymaps
+})
 
 set_keymap('n', '<leader>tv', '<cmd>ToggleTerm size=80 direction=vertical<cr>')

@@ -1,7 +1,14 @@
+if vim.loader then
+    vim.loader.enable()
+end
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 local try_require = require('common').try_require
 
-if not vim.loop.fs_stat(lazypath) then
+if not vim.uv.fs_stat(lazypath) then
     vim.fn.system(
         {"git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", -- latest stable release
          lazypath})
@@ -14,9 +21,11 @@ try_require('options')
 
 -- packages
 -- try_require('pack')
-require("lazy").setup("plugins")
-
-require('impatient').enable_profile()
+require("lazy").setup("plugins", {
+    rocks = {
+        enabled = false
+    }
+})
 
 -- mappings
 try_require('mappings')

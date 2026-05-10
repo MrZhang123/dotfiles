@@ -30,7 +30,7 @@ set_keymap('v', '<S-tab>', '<gv')
 
 -- buffer
 local buffer_opts = {
-	noremap = true,
+	remap = false,
 	silent = true
 }
 nvim_set_keymap('n', '<leader>d', '<cmd>bd<cr>', buffer_opts) -- close buffer

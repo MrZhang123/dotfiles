@@ -1,8 +1,4 @@
 return {{
-    "lewis6991/impatient.nvim",
-    lazy = false
-}, -- lib
-{
     "nvim-lua/plenary.nvim",
     lazy = false
 }, {
@@ -59,8 +55,7 @@ return {{
     "hrsh7th/vim-vsnip", -- completion
     lazy = false,
     dependencies = {{
-        "rafamadriz/friendly-snippets",
-        dependencies = "vim-vsnip"
+        "rafamadriz/friendly-snippets"
     }}
 }, {
     "solarnz/thrift.vim",

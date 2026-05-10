@@ -56,9 +56,6 @@ opt.smartcase = true -- if search have capital , use case for search
 opt.wildmenu = true -- wildmenu, auto complete for commands
 opt.wildmode = {'longest', 'full'}
 
--- disable netrw at the very start of your init.lua (strongly advised)
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
 -- opt.showmatch = true -- show bracket match
 
 -- if not has('gui_running') then
@@ -113,6 +110,17 @@ cmd('hi NormalColor guifg=Black guibg=Green3 ctermbg=46 ctermfg=0')
 cmd('hi InsertColor guifg=Black guibg=Yellow ctermbg=51 ctermfg=0')
 cmd('hi ReplaceColor guifg=Black guibg=maroon1 ctermbg=165 ctermfg=0')
 cmd('hi VisualColor guifg=Black guibg=Orange ctermbg=202 ctermfg=0')
+
+opt.laststatus = 2
+opt.statusline = table.concat({
+    "%#NormalColor#%{(mode()=='n')?' NORMAL ':''}",
+    "%#InsertColor#%{(mode()=='i')?' INSERT ':''}",
+    "%#ReplaceColor#%{(mode()=='R')?' REPLACE ':''}",
+    "%#VisualColor#%{(mode()=='v')?' VISUAL ':''}",
+    "%#StatusLine# %<%F%r%h%w%m",
+    "%=",
+    "%#StatusLine# %y %{&fileencoding?&fileencoding:&encoding} [%{&fileformat}] %p%% %l:%c ",
+})
 
 -- neovim 0.8+
 -- vim.o.ch = 0

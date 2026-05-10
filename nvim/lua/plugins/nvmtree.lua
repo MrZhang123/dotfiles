@@ -1,5 +1,5 @@
 return {{
-    "kyazdani42/nvim-tree.lua", -- A File Explorer For Neovim Written In Lua
+    "nvim-tree/nvim-tree.lua", -- A File Explorer For Neovim Written In Lua
     lazy = false,
     keys = {{'<c-n>', '<cmd>NvimTreeToggle<cr>'}, {'<leader>r', '<cmd>NvimTreeRefresh<cr>'}},
     opts = {
@@ -9,11 +9,17 @@ return {{
         hijack_cursor = false,
         hijack_netrw = true,
         hijack_unnamed_buffer_when_opening = false,
-        open_on_tab = false,
-        sort_by = "name",
-        update_cwd = false,
+        sync_root_with_cwd = false,
         reload_on_bufenter = false,
         respect_buf_cwd = false,
+        sort = {
+            sorter = "name"
+        },
+        tab = {
+            sync = {
+                open = false
+            }
+        },
         view = {
             width = 30,
             -- height = 30,
@@ -26,9 +32,9 @@ return {{
         renderer = {
             add_trailing = false,
             group_empty = false,
-            highlight_git = false,
+            highlight_git = "none",
             highlight_opened_files = "none",
-            root_folder_modifier = ":~",
+            root_folder_label = ":~",
             indent_markers = {
                 enable = false,
                 icons = {
@@ -38,9 +44,18 @@ return {{
                 }
             },
             icons = {
-                webdev_colors = false,
+                web_devicons = {
+                    file = {
+                        color = false
+                    },
+                    folder = {
+                        color = false
+                    }
+                },
                 git_placement = "before",
-                padding = "",
+                padding = {
+                    icon = ""
+                },
                 symlink_arrow = " ➛ ",
                 show = {
                     file = true,
@@ -80,8 +95,10 @@ return {{
         },
         update_focused_file = {
             enable = false,
-            update_cwd = false,
-            ignore_list = {}
+            update_root = {
+                enable = false,
+                ignore_list = {}
+            }
         },
         system_open = {
             cmd = "",
@@ -98,13 +115,13 @@ return {{
             }
         },
         filters = {
+            git_ignored = true,
             dotfiles = false,
             custom = {},
             exclude = {}
         },
         git = {
             enable = true,
-            ignore = true,
             timeout = 400
         },
         actions = {
@@ -128,8 +145,12 @@ return {{
             }
         },
         trash = {
-            cmd = "trash",
-            require_confirm = true
+            cmd = "trash"
+        },
+        ui = {
+            confirm = {
+                trash = true
+            }
         },
         live_filter = {
             prefix = "[FILTER]: ",

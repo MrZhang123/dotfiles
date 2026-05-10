@@ -7,25 +7,24 @@ require("mason-lspconfig").setup({
     ensure_installed = installed
 })
 
--- 这个如果其他地方用得上就保留，用不上可以删
-local set_keymap = require('../common').set_keymap
-
 -- 全局诊断快捷键
 local opts = {
-    noremap = true,
     silent = true
 }
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+vim.keymap.set('n', '[d', function()
+    vim.diagnostic.jump({count = -1})
+end, opts)
+vim.keymap.set('n', ']d', function()
+    vim.diagnostic.jump({count = 1})
+end, opts)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts)
 
 -- LSP 附着后的 buffer 级快捷键
 local on_attach = function(client, bufnr)
     local bufopts = {
-        noremap = true,
         silent = true,
-        buffer = bufnr
+        buf = bufnr
     }
 
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
@@ -51,6 +50,10 @@ end
 
 -- capabilities：开启 snippet 支持（尤其给 css/html/json 用）
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+local ok, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
+if ok then
+    capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+end
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- 使用 Neovim 0.11 的新接口配置并启用各个 LSP
@@ -74,4 +77,9 @@ vim.diagnostic.config({
 })
 
 -- 悬停自动弹出诊断
-vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+vim.api.nvim_create_autocmd({"CursorHold", "CursorHoldI"}, {
+    group = vim.api.nvim_create_augroup("DiagnosticFloat", {clear = true}),
+    callback = function()
+        vim.diagnostic.open_float(nil, {focus = false})
+    end
+})
