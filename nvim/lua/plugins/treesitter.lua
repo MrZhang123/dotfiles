@@ -22,6 +22,10 @@ return {{
         }
     },
     config = function(_, opts)
+        if vim.treesitter.language and vim.treesitter.language.register then
+            vim.treesitter.language.register("bash", {"sh", "bash"})
+        end
+
         if type(opts.ensure_installed) == "table" then
             ---@type table<string, boolean>
             local added = {}

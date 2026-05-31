@@ -1,10 +1,13 @@
 -- 要安装/启用的 LSP 列表
-local installed = {'ts_ls', 'eslint', 'html', 'jsonls', 'gopls', 'cssls', 'cssmodules_ls'}
+local installed = {'ts_ls', 'html', 'jsonls', 'gopls', 'cssls', 'cssmodules_ls'}
 
 -- mason & mason-lspconfig 配置
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = installed
+    ensure_installed = installed,
+    automatic_enable = {
+        exclude = {'eslint'}
+    }
 })
 
 -- 全局诊断快捷键
@@ -58,13 +61,15 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- 使用 Neovim 0.11 的新接口配置并启用各个 LSP
 for _, lsp in ipairs(installed) do
-    vim.lsp.config(lsp, {
+    local config = {
         on_attach = on_attach,
         capabilities = capabilities,
         flags = {
             debounce_text_changes = 150
         }
-    })
+    }
+
+    vim.lsp.config(lsp, config)
     -- 真正启用这个 server
     vim.lsp.enable(lsp)
 end

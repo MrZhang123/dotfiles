@@ -22,6 +22,7 @@ try_require('options')
 -- packages
 -- try_require('pack')
 require("lazy").setup("plugins", {
+    lockfile = vim.fn.stdpath("state") .. "/lazy-lock.json",
     rocks = {
         enabled = false
     }

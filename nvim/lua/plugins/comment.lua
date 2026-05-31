@@ -2,6 +2,16 @@ return {{
     "numToStr/Comment.nvim",
     lazy = false,
     opts = {
+        pre_hook = function(ctx)
+            local ok, parser = pcall(vim.treesitter.get_parser, 0)
+            -- Neovim 0.12 can return nil here when no parser is installed.
+            if ok and parser ~= nil then
+                return nil
+            end
+
+            local ft = require('Comment.ft')
+            return ft.get(vim.bo.filetype, ctx.ctype) or vim.bo.commentstring
+        end,
         ---LHS of toggle mappings in NORMAL mode
         toggler = {
             ---Line-comment toggle keymap

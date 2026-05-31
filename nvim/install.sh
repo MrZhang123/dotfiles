@@ -4,6 +4,7 @@ set -euo pipefail
 script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 config_dir="${XDG_CONFIG_HOME:-$HOME/.config}/nvim"
 data_dir="${XDG_DATA_HOME:-$HOME/.local/share}/nvim"
+state_dir="${XDG_STATE_HOME:-$HOME/.local/state}/nvim"
 lazy_dir="$data_dir/lazy/lazy.nvim"
 
 # Set INSTALL_LANGUAGE_SERVERS=0 or INSTALL_PLUGINS=0 when only refreshing config.
@@ -13,7 +14,8 @@ install_plugins="${INSTALL_PLUGINS:-1}"
 # config
 mkdir -p "$config_dir"
 rm -rf "$config_dir/lua" "$config_dir/after"
-cp "$script_dir/init.lua" "$script_dir/lazy-lock.json" "$config_dir/"
+rm -f "$config_dir/lazy-lock.json"
+cp "$script_dir/init.lua" "$config_dir/"
 cp -R "$script_dir/lua" "$script_dir/after" "$config_dir/"
 
 # lazy.nvim
@@ -25,7 +27,7 @@ fi
 # Language servers
 # yarn global add bash-language-server
 if [ "$install_language_servers" = "1" ]; then
-  # css, eslint, html, json server
+  # css, html, json server
   if command -v yarn >/dev/null 2>&1; then
     yarn global add vscode-langservers-extracted typescript typescript-language-server
   elif command -v npm >/dev/null 2>&1; then
@@ -43,5 +45,6 @@ if [ "$install_language_servers" = "1" ]; then
 fi
 
 if [ "$install_plugins" = "1" ] && command -v nvim >/dev/null 2>&1; then
+  rm -f "$state_dir/lazy-lock.json"
   nvim --headless "+Lazy! sync" "+qa"
 fi
