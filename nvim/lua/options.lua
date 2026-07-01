@@ -17,7 +17,7 @@ opt.history = 200 -- save vim commond list max
 
 -- code fold
 vim.wo.foldmethod = 'expr'
-vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 -- set not fold code when open file
 vim.wo.foldlevel = 99
 

@@ -1,42 +1,29 @@
+local parsers = {"html", "css", "lua", "javascript", "typescript", "tsx", "go", "bash", "comment", "markdown"}
+local filetypes = {"html", "css", "lua", "javascript", "typescript", "typescriptreact", "go", "sh", "bash", "markdown"}
+
 return {{
     "nvim-treesitter/nvim-treesitter", -- treesitter
+    branch = "main",
     lazy = false,
     build = ":TSUpdate",
-    opts = {
-        ensure_installed = {"html", "css", "lua", "javascript", "typescript", "tsx", "go", "bash", "comment", "markdown"},
-        highlight = {
-            enable = true,
-            additional_vim_regex_highlighting = false
-        },
-        indent = {
-            enable = true
-        },
-        incremental_selection = {
-            enable = true,
-            keymaps = {
-                init_selection = 'gnn',
-                node_incremental = 'grn',
-                scope_incremental = 'grc',
-                node_decremental = 'grm'
-            }
-        }
-    },
-    config = function(_, opts)
+    config = function()
+        local treesitter = require("nvim-treesitter")
+
+        treesitter.setup()
+        treesitter.install(parsers)
+
         if vim.treesitter.language and vim.treesitter.language.register then
             vim.treesitter.language.register("bash", {"sh", "bash"})
         end
 
-        if type(opts.ensure_installed) == "table" then
-            ---@type table<string, boolean>
-            local added = {}
-            opts.ensure_installed = vim.tbl_filter(function(lang)
-                if added[lang] then
-                    return false
-                end
-                added[lang] = true
-                return true
-            end, opts.ensure_installed)
-        end
-        require("nvim-treesitter.configs").setup(opts)
+        vim.api.nvim_create_autocmd("FileType", {
+            pattern = filetypes,
+            callback = function()
+                pcall(vim.treesitter.start)
+                vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+                vim.wo.foldmethod = "expr"
+                vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+            end
+        })
     end
 }}
